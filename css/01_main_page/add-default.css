@@ -1,0 +1,83 @@
+
+:root {
+    --col-pri: #ffffff;
+    --col-sec: #3f88bf;
+    --col-ter: #c2c1c1;
+    --col-cua: #000000;
+    --col-gra: #e9e9e9;
+    --col-select: #ff9300;
+    --col-hover:#ff95008e;
+    --col-ok: #aadaff7c;
+    --col-err: #f20707;
+
+    --menu-size: 6vh;
+    --module-contend-height: 94vh;
+    --module-contend-with: 100vw;
+    --time-read-waiting:0s
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+
+    /* no seleccionable */
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    font-family: Arvo;
+
+}
+
+svg.sprite-icons{
+    display: none;
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    overflow: hidden;
+}
+
+/* mensajes usuario */
+.foka,
+.ferr {
+    border-width: 3px;
+    border-style: solid;
+}
+
+.foka {
+    border-color: var(--col-sec);
+}
+
+.ferr {
+    border-color: var(--col-err);
+}
+
+
+picture[name*="logo"] {
+    background-repeat: no-repeat;
+    background-size: 350%;
+}
+
+
+
+picture[name="logo-module"] {
+    filter: grayscale(100%) opacity(40%);
+    padding: 9vh;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+}

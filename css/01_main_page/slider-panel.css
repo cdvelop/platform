@@ -1,0 +1,65 @@
+/* /*********** MOBILE *********** */
+
+.slider_panel {
+	
+	
+	top:-100vh;
+	margin-left: 0;
+	z-index: 1;
+
+	width: var(--module-contend-with);
+	height: var(--module-contend-height);
+
+	/* overflow: hidden; */
+
+	position: absolute;
+	background-color: #000;
+	-webkit-transition: all .6s ease-in-out;
+	-moz-transition: all .6s ease-in-out;
+	-o-transition: all .6s ease-in-out;
+	-ms-transition: all .6s ease-in-out;
+	transition: all .6s ease-in-out;
+}
+
+
+/*  color slider_panel */
+.slider_panel:target {
+	top:var(--menu-size);
+	background-color: var(--col-sec);
+	/* background-color: blueviolet; */
+}
+
+
+
+/************ DESKTOP ************/
+@media only screen and (min-width:600px) {
+
+
+	.slider_panel {
+		/* border: .1vw solid var(--col-gra); */
+		grid-area: module-content;
+		/* margin: 0; */
+		position:unset;
+		/* top:unset; */
+		top:var(--header-height);
+		/* top:10vh; */
+		/* min-width: 80vw; */
+		margin-left: -100vw;
+
+		border-radius: 0em .4em 0em 0em;
+		/* margin-top: 0; */
+		/* height: var(--module-contend-height); */
+		/* height: 80vh; */
+		/* width: 80vw; */
+		/* width: var(--module-contend-with); */
+		/* height: initial; */
+	}
+	
+	.slider_panel:target {
+		/* margin-top: var(--header-height); */
+		/* margin-top: var(--header-height);  */
+		/* margin-top: 2vh; */
+		margin-left: 0;
+	}
+
+}

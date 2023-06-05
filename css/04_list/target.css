@@ -1,0 +1,11 @@
+.description-target {
+    margin-bottom: -55px;
+    right: 5px;
+    position: absolute;
+    background: var(--col-gra);
+    color: var(--col-cua);
+    font-size: 80%;
+    text-transform: capitalize;
+    border-radius: .4em;
+    padding: .3em;
+}

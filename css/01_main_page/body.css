@@ -1,0 +1,108 @@
+	/************ MOBILE ************/
+	
+		body {
+			font-size: .8rem;
+			/* background-color: rgb(255, 17, 0); */
+			background-color: var(--col-ter);
+			/* ESTO HACE QUE SE OCULTE LA BARRA DE DIRECCIONES */
+			min-height: 100vh;
+			
+
+			/* overflow: scroll; */
+			/* scroll-behavior: smooth; */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		
+		body::before {
+			background-size:10em;
+			background-position:center center; 
+			content: "";
+			position: absolute;
+			top: auto; 
+			left: 50%;
+			transform: translateX(-50%);
+			right: 50%;
+			/* bottom: 10em; */
+			width: 10em; height: 10em;
+			/* width: 30px; height: 30px; */
+			background-image: url("logo.png");
+			background-repeat: no-repeat;
+			filter: grayscale(100%) opacity(30%);
+
+
+		  }
+
+		
+		header {
+			position: fixed;
+			align-self: flex-end;
+			bottom: 5px;
+			margin-left: 5px;
+		}
+
+		a:link,
+		a:visited {
+			text-decoration: none;
+			color: var(--col-cua);
+		}
+		
+		
+		
+		/************ DESKTOP ************/
+@media only screen and (min-width:600px)  {
+
+			:root {
+				--header-height: 5vh;
+				--module-contend-height: 95vh;
+				--menu-size: 5vw;
+				--module-contend-with: 95vw;
+			}
+			
+			
+			body {
+				overflow: hidden;
+				background-color: var(--col-gra);
+				font-size: 16px;
+			
+				height: var(--module-contend-height);
+				
+				/* padding: 0; */
+				/* background-color: var(--col-gra); */
+				display: grid;
+				grid-template:
+					"header         header" var(--header-height) 
+					"module-content menu-container" var(--module-contend-height) / 
+					var(--module-contend-with)var(--menu-size);
+			}
+
+			header,
+			.menu-container {
+				background-color: var(--col-gra);
+			}
+
+			header {
+				
+				align-self:unset;
+				bottom:unset; 
+				position: unset;
+
+				margin-left: 0; 
+				max-height: var(--header-height);
+
+				/* height: var(--header-height); */
+				/* min-height: var(--header-height); */
+				/* top: 0; */
+				/* position: fixed; */
+				width: 100vw;
+				/* height: 400px; */
+				
+				grid-area: header;
+				/* z-index: 5; */
+				display: grid;
+				grid-template-columns: 1fr 3fr 1fr;
+			}
+
+		}

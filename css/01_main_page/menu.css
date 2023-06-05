@@ -1,0 +1,141 @@
+	/************ MOBILE *********** */
+
+	.menu-container {
+		/* background-color: var(--col-sec); */
+		background-color: var(--col-gra);
+		position: absolute;
+		width: 100vw;
+		height: var(--menu-size);
+		text-decoration: none;
+		transition: 0.6s all ease;
+		z-index: 3;
+	}
+
+
+	.navbar-container {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		height: 100%;
+	}
+
+	/* ITEM */
+	.navbar-item {
+		width: 100%;
+	}
+
+	.hash-selected{
+
+		background: var(--col-sec);
+	}
+
+	.hash-selected, .hash-selected > svg{
+		/* background:var(--col-select); */
+		color: var(--col-pri);
+		transition: 0.3s all ease;
+	}
+
+
+	.navbar-link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: var(--menu-size);
+		text-decoration: none;
+		transition: 0.6s all ease;
+	}
+
+	.fa-primary {
+		color: var(--col-sec);
+		height: 2.5em;
+		transition: 0.6 all ease;
+		width: 2.5em;
+	}
+
+	.link-text {
+		display: none;
+	}
+
+
+	/************ DESKTOP ************/
+	@media only screen and (min-width:600px) {
+
+		/* menu pricipal de navegacion */
+		.menu-container {
+			position: fixed;
+			grid-area: menu-container;
+			
+			top: var(--header-height);
+			width: var(--menu-size);
+			height: var(--module-contend-height);
+			transition: all .6s ease-in-out;
+			margin-left: auto;
+			right: 0;
+		}
+
+		.menu-container:hover {
+			/* width:15vw; */
+			width: 10em;
+			/* max-width: 20vw; */
+		}
+
+		.menu-container:hover .link-text {
+			display: block;
+		}
+
+		.navbar-container {
+			flex-direction: column;
+			justify-content: initial;
+		}
+
+
+		.navbar-item:last-child {
+			margin-top: auto;
+		}
+
+		.navbar-link {
+			flex-direction: row;
+			justify-content: initial;
+			height: 6em;
+		}
+
+		.navbar-link svg {
+			margin: 0 .5em;
+		}
+
+		.navbar-link:hover{
+			background-color:var(--col-hover);
+			/* background-color:var(--col-pri); */
+		}
+
+		.hash-selected, .hash-selected > .link-text{
+			color: var(--col-pri);
+		}
+
+	
+		.link-text {
+			color: var(--col-sec);
+		}
+
+		.fa-primary { 
+			 max-width: 2.5em;
+			 min-width: 2.5em;
+		 }
+
+
+		.btn-url-disable {
+			pointer-events: none;
+			background: var(--col-ter);
+		}
+
+
+		.btn-selected {
+			background: var(--col-select);
+		}
+
+
+
+	}

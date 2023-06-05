@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover"> -->
+	<meta name="viewport">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- posibles valores de contenido: predeterminado, negro o negro translúcido -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<link rel="icon" type="image/png" href="/internal/setting/assets/favicon.png">
+
+	<!-- css configuracion  -->
+	<link rel="stylesheet" href="01_main_page/add-default.css">
+	<!-- css plataforma -->
+	<link rel="stylesheet" href="01_main_page/body.css">
+	<link rel="stylesheet" href="01_main_page/loging.css">
+	<link rel="stylesheet" href="01_main_page/menu.css">
+	<link rel="stylesheet" href="01_main_page/slider-panel.css">
+	<link rel="stylesheet" href="01_main_page/user-message.css">
+
+	<!-- css modulos -->
+	<link rel="stylesheet" href="02_modules/module.css">
+	<link rel="stylesheet" href="02_modules/scroll-snap.css">
+
+	<!-- css formularios -->
+	<link rel="stylesheet" href="03_forms/add_basic.css">
+	<link rel="stylesheet" href="03_forms/basic_input.css">
+	<link rel="stylesheet" href="03_forms/crud-buttons.css">
+	<link rel="stylesheet" href="03_forms/fieldset.css">
+	<link rel="stylesheet" href="03_forms/radio_check.css">
+
+	<!-- lista -->
+	<link rel="stylesheet" href="04_list/list.css">
+	<link rel="stylesheet" href="04_list/search.css">
+	<link rel="stylesheet" href="04_list/target.css">
+	
+	<link rel="stylesheet" href="09_close/close.css">
+	
+	<!-- <title>.AppName-ver.rAppVersion</title> -->
+</head>
+
+<body>
+
+	<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"
+		style="position: absolute; width: 0; height: 0; overflow: hidden;">
+
+		<defs>
+			<symbol id="icon-check" viewBox="1 1 15.6 11.9">
+				<path fill="currentColor"
+					d="M16.3 4l-8.6 8.6c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3l-5-5C1.1 7.5 1 7.2 1 7c0-.3.1-.5.3-.7l1.4-1.4c.2-.2.4-.3.7-.3.3 0 .5.1.7.3l3 3 6.6-6.6c0-.2.3-.3.5-.3.3 0 .5.1.7.3l1.4 1.4c.2.2.3.4.3.7 0 .2-.1.4-.3.6" />
+			</symbol>
+
+			<symbol id="icon-client" viewBox="0 0 640 512">
+				<path fill="currentColor"
+					d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z" />
+			</symbol>
+
+			<symbol id="icon-home" viewBox="0 0 576 512">
+				<path fill="currentColor"
+					d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" />
+			</symbol>
+
+			<symbol id="icon-products" viewBox="0 0 448 512">
+				<path fill="currentColor"
+					d="M350.85 129c25.97 4.67 47.27 18.67 63.92 42 14.65 20.67 24.64 46.67 29.96 78 4.67 28.67 4.32 57.33-1 86-7.99 47.33-23.97 87-47.94 119-28.64 38.67-64.59 58-107.87 58-10.66 0-22.3-3.33-34.96-10-8.66-5.33-18.31-8-28.97-8s-20.3 2.67-28.97 8c-12.66 6.67-24.3 10-34.96 10-43.28 0-79.23-19.33-107.87-58-23.97-32-39.95-71.67-47.94-119-5.32-28.67-5.67-57.33-1-86 5.32-31.33 15.31-57.33 29.96-78 16.65-23.33 37.95-37.33 63.92-42 15.98-2.67 37.95-.33 65.92 7 23.97 6.67 44.28 14.67 60.93 24 16.65-9.33 36.96-17.33 60.93-24 27.98-7.33 49.96-9.67 65.94-7zm-54.94-41c-9.32 8.67-21.65 15-36.96 19-10.66 3.33-22.3 5-34.96 5l-14.98-1c-1.33-9.33-1.33-20 0-32 2.67-24 10.32-42.33 22.97-55 9.32-8.67 21.65-15 36.96-19 10.66-3.33 22.3-5 34.96-5l14.98 1 1 15c0 12.67-1.67 24.33-4.99 35-3.99 15.33-10.31 27.67-18.98 37z" />
+			</symbol>
+
+			<symbol id="icon-info" viewBox="0 0 16 16">
+				<path fill="currentColor"
+					d="m7 11h2v2h-2zm4-7c0.552 0 1 0.448 1 1v3l-3 2h-2v-1l3-2v-1h-5v-2h6zm-3-2.5c-1.736 0-3.369 0.676-4.596 1.904s-1.904 2.86-1.904 4.596 0.676 3.369 1.904 4.596 2.86 1.904 4.596 1.904 3.369-0.676 4.596-1.904 1.904-2.86 1.904-4.596-0.676-3.369-1.904-4.596-2.86-1.904-4.596-1.904zm0-1.5c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8z" />
+			</symbol>
+
+
+			<symbol id="icon-btn-delete" viewBox="0 0 16 16">
+				<path fill="currentColor"
+					d="M0 6.5v3c0 0.276 0.224 0.5 0.5 0.5h15c0.276 0 0.5-0.224 0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5h-15c-0.276 0-0.5 0.224-0.5 0.5z" />
+			</symbol>
+
+			<symbol id="icon-btn-cancel" viewBox="0 0 16 16">
+				<path fill="currentColor"
+					d="M8 1c-2.209 0-4.209 0.896-5.657 2.343l-2.343-2.343v6h6l-2.243-2.243c1.086-1.086 2.586-1.757 4.243-1.757 3.314 0 6 2.686 6 6 0 1.792-0.786 3.401-2.032 4.5l1.323 1.5c1.661-1.466 2.709-3.611 2.709-6 0-4.418-3.582-8-8-8z" />
+			</symbol>
+
+			<symbol id="icon-btn-new" viewBox="0 0 16 16">
+				<path fill="currentColor"
+					d="M15.5 6h-5.5v-5.5c0-0.276-0.224-0.5-0.5-0.5h-3c-0.276 0-0.5 0.224-0.5 0.5v5.5h-5.5c-0.276 0-0.5 0.224-0.5 0.5v3c0 0.276 0.224 0.5 0.5 0.5h5.5v5.5c0 0.276 0.224 0.5 0.5 0.5h3c0.276 0 0.5-0.224 0.5-0.5v-5.5h5.5c0.276 0 0.5-0.224 0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5z" />
+			</symbol>
+
+			<symbol id="icon-btn-save" viewBox="0 0 16 16">
+				<path fill="currentColor"
+					d="M14 0h-14v16h16v-14l-2-2zM8 2h2v4h-2v-4zM14 14h-12v-12h1v5h9v-5h1.172l0.828 0.828v11.172z" />
+			</symbol>
+
+			<symbol id="icon-key" viewBox="0 0 16 16">
+				<path fill="currentColor"
+					d="m1.1 5.2c1.6-1.6 4.1-1.6 5.6 0 0.18 0.18 0.33 0.36 0.47 0.56h6.8l1.7 1.7c0.31 0.31 0.31 0.81 0 1.1l-0.56 0.56-0.56-0.56-1.1 1.1-1.1-1.1-1.1 1.1-1.1-1.1-1.1 1.1h-1.5c-0.19 0.41-0.45 0.79-0.79 1.1-1.6 1.6-4.1 1.6-5.6 0-1.6-1.6-1.6-4.1 0-5.6zm2 3.6c0.47-0.46 0.47-1.2 0-1.7-0.47-0.46-1.2-0.46-1.7 0-0.47 0.46-0.47 1.2 0 1.7 0.47 0.46 1.2 0.46 1.7 0z"
+					stroke-width=".79" />
+			</symbol>
+
+		</defs>
+	</svg>
+
+
+	<nav class="menu-container">
+		<ul class="navbar-container">
+
+			<li class="navbar-item">
+				<a href="#" class="navbar-link" name="home">
+					<svg aria-hidden="true" focusable="false" class="fa-primary">
+						<use xlink:href="#icon-home" />
+					</svg>
+					<span class="link-text">Home</span>
+				</a>
+			</li>
+
+			<li class="navbar-item">
+				<a href="#products" class="navbar-link" name="products">
+
+					<svg aria-hidden="true" focusable="false" class="fa-primary">
+						<use xlink:href="#icon-products" />
+					</svg>
+
+					<span class="link-text">Productos</span>
+				</a>
+			</li>
+
+
+			<li class="navbar-item">
+				<a href="#client" class="navbar-link" name="client">
+
+					<svg aria-hidden="true" focusable="false" class="fa-primary">
+						<use xlink:href="#icon-client" />
+					</svg>
+
+					<span class="link-text">Nuevo Cliente</span>
+				</a>
+			</li>
+
+			<li class="navbar-item">
+				<a href="#info" class="navbar-link" name="info">
+
+
+
+					<svg aria-hidden="true" focusable="false" class="fa-primary">
+						<use xlink:href="#icon-info" />
+					</svg>
+
+					<span class="link-text">Info</span>
+				</a>
+			</li>
+
+
+		</ul>
+	</nav>
+
+	<header>
+		<div id="USER_NAME"><a href="#login" name="login" title="Cerrar Sesion">Juanito perez carcamo de
+				lordes</a></div>
+		<div id="user-desktop-messages"></div>
+		<h2 id="USER_AREA">Area Administrativa</h2>
+	</header>
+
+	<div id="user-mobile-messages">
+	</div>
+
+	<div id="horizontal-mobile-message">
+		<H4>MODO DE VISUALIZACIÓN INCOMPATIBLE</H4>
+	</div>
+
+	<div class="login-form-content">
+		<div class="header-module">
+			<div class="module-title">
+				<h1>Ingresar:</h1>
+			</div>
+
+		</div>
+
+		<div class="box-snap edition-container">
+
+			<form action="signin" method="post">
+				<fieldset>
+					<legend><label for="usr">Nombre</label></legend>
+					<input type="text" value="luis" id="usr">
+				</fieldset>
+
+				<fieldset>
+					<legend><label for="pwd">Contraseña</label></legend>
+					<input type="password" value="123" id="pwd">
+				</fieldset>
+
+				<label class="login-button">
+					<input type="submit" class="bt" value="" title="Ingresar">
+					<svg aria-hidden="true" focusable="false" class="input-icon-submit">
+						<use xlink:href="#icon-key" />
+					</svg>
+				</label>
+
+			</form>
+		</div>
+	</div>
+
+	<div id="info" class="slider_panel">
+		<div class="title">
+			<h1>Info:</h1>
+		</div>
+	</div>
+
+	<div id="products" class="slider_panel">
+		<div class="header-module">
+			<div class="module-title">
+				<h1>Productos:</h1>
+			</div>
+
+			<div class="target-module">
+				<select name="select">
+					<option value="value1">Value 1</option>
+					<option value="value2" selected>Value 2</option>
+					<option value="value3">Value 3</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="scroll-container">
+
+			<div class="box-snap search-list-container">
+
+				<div class="list-container">
+					<ol id="lista_products" class="lista">
+						<li data-id="001" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.32"></data>
+								<data data-tag="text" data-name="device_name" data-value="pc archivo (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc archivo (1er piso)</a><span
+								class="description-target">172.0.0.32</span>
+						</li>
+						<li data-id="002" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.51"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dental 1 (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dental 1 (2do piso)</a><span
+								class="description-target">172.0.0.51</span>
+						</li>
+
+					</ol>
+				</div>
+
+				<div id="device-search-form" class="search-container"><label for="search_device"></label><input
+						type="search" id="search-footer-device" title="letras numeros - permitidos max 50 caracteres"
+						pattern="^[A-Za-zÑñ 0-9-]{1,20}$">
+				</div>
+
+			</div>
+
+			<div class="box-snap edition-container">
+				<div class="form-inputs-container">
+
+					<form class="form-distributed-fields" id="patient-form" name="patient-form" autocomplete="off">
+						<fieldset tabindex="0" class="max-height-100">
+							<legend><label for="form.patient.0">Run o Dni</label></legend>
+							<input type="text" id="form.patient.0" name="patient_run"
+								title="texto,punto,coma, parentesis o numeros permitidos" pattern="^[A-Za-z0-9-]{5,15}$"
+								required="">
+						</fieldset>
+
+						<fieldset tabindex="1" class="max-height-100">
+							<legend><label for="form.patient.1">Nombre y Apellido(s)</label></legend>
+							<input type="text" name="patient_name"
+								title="texto,punto,coma, parentesis o numeros permitidos"
+								pattern="(^$)|^[^0-9]([A-Za-z0-9Ññ.,\\.() ]*)$" required="">
+						</fieldset>
+
+						<fieldset tabindex="2">
+							<legend><label for="form.patient.2">Edad</label></legend>
+							<label class="age-number"><input data-name="age-number" type="number" min="0" max="150"
+									title="Campo Informativo"></label><label class="age-date"><input type="date"
+									name="patient_birthday" title="formato fecha: DD-MM-YYYY"
+									pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" required=""></label>
+						</fieldset>
+
+						<fieldset tabindex="3" class="min-width-100">
+							<legend><label for="form.patient.3">Datos Contacto</label></legend>
+							<textarea name="patient_contact" rows="1" cols="50"
+								title="letras numeros - , : . permitidos min 0 max 1000 caracteres"
+								pattern="^[A-Za-zÑñ 0-9:.,+-/\\|\n/g]{0,1000}$" required=""></textarea>
+						</fieldset>
+
+						<fieldset tabindex="4">
+							<legend><label for="form.patient.4">Genero</label></legend>
+							<label for="patient.4.0" class="block-label"><input type="radio" id="patient.4.0"
+									name="patient_gender" value="f"><span>Femenino</span></label><label
+								for="patient.4.1" class="block-label"><input type="radio" id="patient.4.1"
+									name="patient_gender" value="m"><span>Masculino</span></label>
+						</fieldset>
+
+						<fieldset tabindex="5" class="min-width-100">
+							<legend><label for="form.patient.5">Direccion</label></legend>
+							<textarea name="patient_address" rows="1" cols="50"
+								title="letras numeros - , : . permitidos min 0 max 1000 caracteres"
+								pattern="^[A-Za-zÑñ 0-9:.,+-/\\|\n/g]{0,1000}$"></textarea>
+						</fieldset>
+
+
+						<fieldset tabindex="6" class="min-width-100">
+							<legend><label for="form.patient.5">Comentario</label></legend>
+							<textarea name="patient_address" rows="1" cols="50"
+								title="letras numeros - , : . permitidos min 0 max 1000 caracteres"
+								pattern="^[A-Za-zÑñ 0-9:.,+-/\\|\n/g]{0,1000}$"></textarea>
+						</fieldset>
+
+					</form>
+
+				</div>
+				<div class="crud-buttons-container">
+					<div class="contebuton">
+						<button name="btn_cruddel" title="Eliminar" disabled="true"></button><button
+							name="btn_crudcancel" title="Cancelar"></button><button name="btn_crudnew"
+							title="Agregar"></button><button name="btn_crudsave" title="Guardar" disabled=""></button>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="client" class="slider_panel">
+		<div class="header-module">
+			<div class="module-title">
+				<h1>Clients:</h1>
+			</div>
+
+			<div class="target-module">
+				<select name="select">
+					<option value="value1">Value 1</option>
+					<option value="value2" selected>Value 2</option>
+					<option value="value3">Value 3</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="scroll-container">
+
+			<div class="box-snap search-list-container">
+
+				<div class="list-container">
+					<ol id="lista_device" class="lista">
+						<li data-id="1643316343523277400" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.32"></data>
+								<data data-tag="text" data-name="device_name" data-value="pc archivo (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc archivo (1er piso)</a><span
+								class="description-target">172.0.0.32</span>
+						</li>
+						<li data-id="1643316343528290800" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.51"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dental 1 (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dental 1 (2do piso)</a><span
+								class="description-target">172.0.0.51</span>
+						</li>
+						<li data-id="1643316343529293400" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.52"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dental 2 (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dental 2 (2do piso)</a><span
+								class="description-target">172.0.0.52</span>
+						</li>
+						<li data-id="1643316343530296100" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.53"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dental 3 (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dental 3 (2do piso)</a><span
+								class="description-target">172.0.0.53</span>
+						</li>
+						<li data-id="1643316343533304100" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dermatologia (2do piso)"></data>
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.64"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dermatologia (2do piso)</a><span
+								class="description-target">172.0.0.64</span>
+						</li>
+						<li data-id="1643316343532301400" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.63"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dr garrido (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dr garrido (2do piso)</a><span
+								class="description-target">172.0.0.63</span>
+						</li>
+						<li data-id="1643316343521272100" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.34"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dr hernandez cons1 (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dr hernandez cons1 (1er piso)</a><span
+								class="description-target">172.0.0.34</span>
+						</li>
+						<li data-id="1643316343524280100" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.31"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc dr ibanez cons2 (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc dr ibanez cons2 (1er piso)</a><span
+								class="description-target">172.0.0.31</span>
+						</li>
+						<li data-id="1643316343531298800" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.61"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc ecografia (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc ecografia (2do piso)</a><span
+								class="description-target">172.0.0.61</span>
+						</li>
+						<li data-id="1643316343520270100" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.84"></data>
+								<data data-tag="text" data-name="device_name" data-value="pc farmacia"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc farmacia</a><span class="description-target">172.0.0.84</span>
+						</li>
+						<li data-id="1643316343525282800" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.41"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc gastroscopia (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc gastroscopia (1er piso)</a><span
+								class="description-target">172.0.0.41</span>
+						</li>
+						<li data-id="1643316343535309700" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.72"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc ginecologia (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc ginecologia (2do piso)</a><span
+								class="description-target">172.0.0.72</span>
+						</li>
+						<li data-id="1643316343534307400" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.71"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc imagenologia (2do piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc imagenologia (2do piso)</a><span
+								class="description-target">172.0.0.71</span>
+						</li>
+						<li data-id="1643316343517261500" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.81"></data>
+								<data data-tag="text" data-name="device_name" data-value="pc info1"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc info1</a><span class="description-target">172.0.0.81</span>
+						</li>
+						<li data-id="1643316343518264100" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_name" data-value="pc info2"></data>
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.82"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc info2</a><span class="description-target">172.0.0.82</span>
+						</li>
+						<li data-id="1643316343519266800" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_name" data-value="pc info3"></data>
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.83"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc info3</a><span class="description-target">172.0.0.83</span>
+						</li>
+						<li data-id="1643316343522274800" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.33"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc podologia (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc podologia (1er piso)</a><span
+								class="description-target">172.0.0.33</span>
+						</li>
+						<li data-id="1643316343526285400" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.42"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc psicologia (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc psicologia (1er piso)</a><span
+								class="description-target">172.0.0.42</span>
+						</li>
+						<li data-id="1643316343527288100" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.43"></data>
+								<data data-tag="text" data-name="device_name"
+									data-value="pc traumatologia (1er piso)"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">pc traumatologia (1er piso)</a><span
+								class="description-target">172.0.0.43</span>
+						</li>
+						<li data-id="1643316343516259700" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="172.0.0.1"></data>
+								<data data-tag="text" data-name="device_name" data-value="servidor principal"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">servidor principal</a><span
+								class="description-target">172.0.0.1</span>
+						</li>
+						<li data-id="1643316343514253500" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_ip" data-value="192.168.0.20"></data>
+								<data data-tag="text" data-name="device_name" data-value="testing notebook"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">testing notebook</a><span
+								class="description-target">192.168.0.20</span>
+						</li>
+						<li data-id="1643316343515283800" class="target-li-off target-li ">
+							<div class="hiden">
+								<data data-tag="text" data-name="device_name" data-value="testing servidor"></data>
+								<data data-tag="text" data-name="device_ip" data-value="127.0.0.1"></data>
+							</div>
+							<i name="icon" class=""></i>
+							<a href="#" name="title">testing servidor</a><span
+								class="description-target">127.0.0.1</span>
+						</li>
+					</ol>
+				</div>
+
+				<div id="device-search-form" class="search-container"><label for="search_device"></label><input
+						type="search" id="search-footer-device" title="letras numeros - permitidos max 50 caracteres"
+						pattern="^[A-Za-zÑñ 0-9-]{1,20}$">
+				</div>
+
+			</div>
+
+			<div class="box-snap edition-container">
+				<div class="form-inputs-container">
+
+					<form class="form-distributed-fields" id="patient-form" name="patient-form" autocomplete="off">
+						<fieldset tabindex="0" class="max-height-100">
+							<legend><label for="form.patient.0">Run o Dni</label></legend>
+							<input type="text" id="form.patient.0" name="patient_run"
+								title="texto,punto,coma, parentesis o numeros permitidos" pattern="^[A-Za-z0-9-]{5,15}$"
+								required="">
+						</fieldset>
+
+						<fieldset tabindex="1" class="max-height-100">
+							<legend><label for="form.patient.1">Nombre y Apellido(s)</label></legend>
+							<input type="text" name="patient_name"
+								title="texto,punto,coma, parentesis o numeros permitidos"
+								pattern="(^$)|^[^0-9]([A-Za-z0-9Ññ.,\\.() ]*)$" required="">
+						</fieldset>
+
+						<fieldset tabindex="2">
+							<legend><label for="form.patient.2">Edad</label></legend>
+							<label class="age-number"><input data-name="age-number" type="number" min="0" max="150"
+									title="Campo Informativo"></label><label class="age-date"><input type="date"
+									name="patient_birthday" title="formato fecha: DD-MM-YYYY"
+									pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" required=""></label>
+						</fieldset>
+
+						<fieldset tabindex="3" class="min-width-100">
+							<legend><label for="form.patient.3">Datos Contacto</label></legend>
+							<textarea name="patient_contact" rows="1" cols="50"
+								title="letras numeros - , : . permitidos min 0 max 1000 caracteres"
+								pattern="^[A-Za-zÑñ 0-9:.,+-/\\|\n/g]{0,1000}$" required=""></textarea>
+						</fieldset>
+
+						<fieldset tabindex="4">
+							<legend><label for="form.patient.4">Genero</label></legend>
+							<label for="patient.4.0" class="block-label"><input type="radio" id="patient.4.0"
+									name="patient_gender" value="f"><span>Femenino</span></label><label
+								for="patient.4.1" class="block-label"><input type="radio" id="patient.4.1"
+									name="patient_gender" value="m"><span>Masculino</span></label>
+						</fieldset>
+
+						<fieldset tabindex="5" class="min-width-100">
+							<legend><label for="form.patient.5">Direccion</label></legend>
+							<textarea name="patient_address" rows="1" cols="50"
+								title="letras numeros - , : . permitidos min 0 max 1000 caracteres"
+								pattern="^[A-Za-zÑñ 0-9:.,+-/\\|\n/g]{0,1000}$"></textarea>
+						</fieldset>
+
+
+						<fieldset tabindex="6" class="min-width-100">
+							<legend><label for="form.patient.5">Comentario</label></legend>
+							<textarea name="patient_address" rows="1" cols="50"
+								title="letras numeros - , : . permitidos min 0 max 1000 caracteres"
+								pattern="^[A-Za-zÑñ 0-9:.,+-/\\|\n/g]{0,1000}$"></textarea>
+						</fieldset>
+
+					</form>
+
+				</div>
+				<div class="crud-buttons-container">
+					<div class="contebuton">
+						<button name="btn_cruddel" title="Eliminar" disabled="true">
+							<svg aria-hidden="true" focusable="false" class="form-btn">
+								<use xlink:href="#icon-btn-delete" />
+							</svg>
+						</button>
+
+						<button name="btn_crudcancel" title="Cancelar">
+							<svg aria-hidden="true" focusable="false" class="form-btn">
+								<use xlink:href="#icon-btn-cancel" />
+							</svg>
+						</button>
+
+						<button name="btn_crudnew" title="Agregar">
+							<svg aria-hidden="true" focusable="false" class="form-btn">
+								<use xlink:href="#icon-btn-new" />
+							</svg>
+						</button>
+
+						<button name="btn_crudsave" title="Guardar" disabled="">
+							<svg aria-hidden="true" focusable="false" class="form-btn">
+								<use xlink:href="#icon-btn-save" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- <script src="modules/jstest/http_request.js"></script> -->
+	<!-- <script src="modules/jstest/load_modules.js"></script> -->
+	<!-- <script src="modules/products/jstest/load_data.js"></script> -->
+
+	<!-- JS GLOBAL -->
+	<!-- <script src="jsglobal/basic-module.js"></script> -->
+	<!-- <script src="jsglobal/color-message.js"></script> -->
+	<!-- <script src="jsglobal/dates.js"></script> -->
+	<!-- <script src="jsglobal/nunber.js"></script> -->
+	<!-- <script src="jsglobal/router.js"></script> -->
+
+	<!-- USER EXPERIENCE -->
+	<!-- <script src="jsglobal/ux_mobile.js"></script> -->
+
+	<!-- FORM -->
+	<!-- <script src="form/form_handler/jsmodule/valid_form.js"></script> -->
+
+	<!-- SOLO PARA TEST  -->
+	<!-- <script src="test_main.js"></script> -->
+</body>
+
+</html>

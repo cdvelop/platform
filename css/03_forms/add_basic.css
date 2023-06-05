@@ -1,0 +1,56 @@
+
+.form-distributed-fields {
+	flex-grow: 1;
+	overflow: auto;
+	/* for Firefox */
+	min-height: 0;
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	flex-direction: row;
+	
+	scrollbar-width: thin;
+	
+	border-radius: .4em;
+
+	/* margin: var(--mag-sec); */
+	/* margin: var(--mag-sec) var(--mag-sec) 0 var(--mag-sec); */
+
+	height: calc(var(--module-contend-height) - var(--title-height) - var(--crud-buttons-container-height));
+
+   /* height: 50vh; */
+}
+
+.form-distributed-fields::-webkit-scrollbar {
+	width: .2em;
+	background: none;
+	border-radius: .1em;		
+}
+
+.form-distributed-fields::-webkit-scrollbar-track {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.form-distributed-fields::-webkit-scrollbar-thumb {
+	background: var(--col-gra);
+	border-radius: .1em;
+}
+
+/************ DESKTOP ************/
+@media only screen and (min-width:600px) {
+
+	.form-distributed-fields {
+		/* padding: 0 .3em var(--mag-sec) var(--mag-sec); */
+		height: calc(var(--module-contend-height) - var(--title-height) - var(--crud-buttons-container-height) - 1.1vh);
+	
+		width: 100%;
+		/* width: calc(var(--module-contend-with) - var(--mag-pri)); */
+/* padding-right: var(--mag-sec); */
+/* margin-right:var(--mag-sec); ; */
+		/* width: calc(var(--module-contend-with) - var(--mag-pri)); */
+		overflow-x: hidden;
+
+		background: var(--col-ter);
+	}
+}

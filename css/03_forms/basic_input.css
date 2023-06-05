@@ -1,0 +1,176 @@
+@keyframes autofill {
+    to {
+        background: transparent;
+    }
+}
+
+span.right-age,
+select[name*="id"],
+input[type=number],
+input[type=text],
+input[type=time],
+input[type=password],
+input[type=search],
+textarea {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: auto;
+}
+
+input[type=text]:focus,input[type=number]:focus,input[type=password]:focus {
+    border-bottom: 1px solid var(--col-select);
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+/* textarea::-webkit-scrollbar { */
+    /* width: .2em; */
+    /* background: none; */
+    /* border-radius: .1em; */
+/* } */
+
+/* textarea::-webkit-scrollbar-track { */
+    /* margin-top: 50px; */
+    /* margin-bottom: 50px; */
+/* } */
+
+/* textarea::-webkit-scrollbar-thumb { */
+    /* background: var(--col-sec); */
+    /* border-radius: .1em; */
+/* } */
+
+.disable,
+input:disabled,
+input[type=text]:disabled {
+    background-color: var(--col-gra);
+    /* background-color: var(--col-ter); */
+    pointer-events: none;
+    /*  border-color: var(--col-gra); */
+}
+
+input {
+    background: transparent;
+}
+
+input:-webkit-autofill {
+    animation-name: autofill;
+    animation-fill-mode: both;
+}
+
+input:active {
+    background: none;
+}
+
+input::placeholder {
+    color: var(--col-ter);
+    font-size: .9em;
+    font-weight: normal;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/*  ::-webkit-file-upload-button, */
+
+
+select {
+    cursor: pointer;
+    font-weight: bold;
+    /* font-size: 101%; */
+    font-size: 1.1rem;
+    border: 0;
+    outline: 0;
+    background: none;
+    border-radius: 0em .4em .4em 0em;
+    width: 100%;
+    /* flex: auto; */
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+select:focus>option:checked {
+    color: var(--col-pri) !important;
+    background: var(--col-sec) !important;
+}
+
+select::-webkit-scrollbar {
+    display: none;
+}
+
+/* select::-moz-scrollbar {display: none;} */
+/* select::-o-scrollbar {	display: none;	} */
+/* select::-google-ms-scrollbar {display: none;} */
+/* select::-khtml-scrollbar {display: none;} */
+
+/* remover text decoracion */
+input[type=text] {
+    /* width: auto; */
+    /* display: none; */
+    position: absolute;
+}
+
+
+input[type=date] {
+    font-weight: bold;
+    width: 100%;
+    /* font-size: 101%; */
+    font-size: 1.1rem;
+
+    border: none;
+}
+
+input[type=time]::after {
+    content: ' Horas';
+    /* font-size: 80%; */
+    font-size: 1rem;
+}
+
+.age-number input {
+    /* margin-top: 10px; */
+    /* top: 10px; */
+    width: 8%;
+}
+
+.age-number:after,
+.age-date::before {
+    color: var(--col-ter);
+    /* font-size: 70%; */
+    font-size: .8rem;
+}
+
+label.age-number:after {
+    content: 'Años';
+}
+
+.age-date input {
+    width: 140px;
+    /* width: 60%; */
+
+    float: right;
+}
+
+.age-date {
+    float: right;
+}
+
+.age-date::before {
+    /* padding: 0 5px 0 0; */
+    vertical-align: -20%;
+    
+    content: 'Fecha Nacimiento:';
+    margin-right: 7px;
+}
+
+
+

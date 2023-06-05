@@ -1,0 +1,146 @@
+#USER_NAME {
+	text-decoration: none;
+}
+
+header #USER_NAME a {
+	text-transform: capitalize;
+}
+
+#user-desktop-messages {
+	width: 100%;
+	justify-content: center;
+
+}
+
+/* #user-desktop-messages {
+	text-transform: capitalize;
+} */
+
+#USER_AREA {
+	text-transform: uppercase;
+	color: var(--col-pri);
+	text-align: right;
+}
+
+#USER_NAME,
+#user-desktop-messages,
+#USER_AREA {
+	display: flex;
+	align-items: center;
+}
+
+.err {
+	color: var(--col-err);
+}
+
+.ok {
+	color: var(--col-sec);
+}
+
+.off {
+	color: var(--col-ter);
+}
+
+
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	to {
+		opacity: .7;
+		visibility: hidden;
+	}
+}
+
+
+
+#horizontal-mobile-message,
+#user-mobile-messages {
+	z-index: 4;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#user-mobile-messages {
+	background: rgba(255, 255, 255, 0.8);
+	visibility: hidden;
+	animation: fadeOut var(--time-read-waiting);
+}
+
+
+#horizontal-mobile-message {
+	color: var(--col-pri);
+	touch-action: none;
+	display: none;
+	background: var(--col-sec);
+}
+
+@media only screen and (orientation:portrait) {
+	#horizontal-mobile-message {
+		display: none;
+	}
+}
+
+
+@media only screen and (orientation:landscape) and (min-width:600px) and (max-width:1024px)   {
+	#horizontal-mobile-message {
+		display:flex;
+	}
+}
+
+
+.off,
+.err,
+.ok {
+	text-align: center;
+	padding: 20px;
+	width: 80%;
+	font-size: 1.3em;
+	text-shadow: 0.1em 0.1em 0.1em #ffffff;
+}
+
+/************ DESKTOP ************/
+@media only screen and (min-width:600px) {
+
+	
+	.off,
+	.err,
+	.ok {
+		padding: 0;
+		animation: fadeOut var(--time-read-waiting);
+		visibility: hidden;
+		width: 100%;
+	}
+
+	#USER_NAME {
+		font-size: calc(.5em + .5vh);
+		margin-left: .4rem;
+	}
+
+
+	#USER_AREA {
+		font-size: calc(.5em + .5vh);
+		margin-left: auto;
+		margin-right: .4rem;
+	}
+
+	#user-desktop-messages {
+		font-size: calc(.4em + .4vh);
+	}
+
+	#user-mobile-messages {
+		all: initial;
+		/* or unset */
+	}
+
+
+}
