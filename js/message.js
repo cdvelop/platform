@@ -7,7 +7,7 @@ function ShowMessageType(data) {
 	if (data.Message != "") {
 
 		let tipo;
-		switch (data.Type) {
+		switch (data.Action) {
 			case "error":
 				tipo = "err"
 				seconds = "240";

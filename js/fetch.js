@@ -8,7 +8,7 @@ function NewRequest(props) {
     fetch(URL_HTTP + endpoint, {
       method,
       headers: {
-        'Content-Type': content_type
+        'Content-Action': content_type
       },
       body: content_type === 'application/json' ? JSON.stringify(data) : data
     })
@@ -20,6 +20,6 @@ function NewRequest(props) {
     })
     .then(json => response(json))
     .catch(error => {
-      ShowMessageType({"Type":"error","Message":error.toString()})
+      ShowMessageType({"Action":"error","Message":error.toString()})
     });
   }

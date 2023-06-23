@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover"> -->
+	<meta name="viewport">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- posibles valores de contenido: predeterminado, negro o negro translúcido -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="icon" type="image/png" href="static/favicon.png">
+	<link rel="stylesheet" href="{{.StyleSheet}}">
+	<title>{{.AppName}}-ver.{{.AppVersion}}</title>
+</head>
+
+<body>
+	<svg class="sprite-icons" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">
+		<defs>
+			{{.SpriteIcons}}
+		</defs>
+	</svg>
+	<nav class="menu-container">
+		<ul class="navbar-container">
+			{{.Menu}}
+		</ul>
+	</nav>
+	<header>
+		<div id="USER_NAME"><a href="#login" name="login" title="Cerrar Sesion">{{.UserName}}</a></div>
+		<div id="user-desktop-messages">
+			<H4 class="err">{{.Message}}</H4>
+		</div>
+		<h2 id="USER_AREA">{{.UserArea}}</h2>
+	</header>
+	<div id="user-mobile-messages">
+		<H4 class="err">{{.Message}}</H4>
+	</div>
+	<div id="incompatible-message">
+		<H4>MODO DE VISUALIZACIÓN INCOMPATIBLE</H4>
+	</div>
+	{{.Modules}}
+	<script src="{{.Script}}"></script>
+</body>
+
+</html>
