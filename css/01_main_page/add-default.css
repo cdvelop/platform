@@ -1,4 +1,3 @@
-
 :root {
     --col-pri: #ffffff;
     --col-sec: #3f88bf;
@@ -42,6 +41,7 @@
 
 }
 
+
 svg.sprite-icons{
     display: none;
     position: absolute;
@@ -50,27 +50,11 @@ svg.sprite-icons{
     overflow: hidden;
 }
 
-/* mensajes usuario */
-.foka,
-.ferr {
-    border-width: 3px;
-    border-style: solid;
-}
-
-.foka {
-    border-color: var(--col-sec);
-}
-
-.ferr {
-    border-color: var(--col-err);
-}
-
 
 picture[name*="logo"] {
     background-repeat: no-repeat;
     background-size: 350%;
 }
-
 
 
 picture[name="logo-module"] {

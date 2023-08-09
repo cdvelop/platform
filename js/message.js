@@ -55,3 +55,7 @@ function closeMobileMessage() {
 	// console.log("CLICK EN MENSAJE",e.target);
 	document.documentElement.style.setProperty('--time-read-waiting', '0s');
 }
+
+function Saludo(message) {
+	console.log("SALUDANDO: ",message);
+}

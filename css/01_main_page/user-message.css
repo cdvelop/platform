@@ -1,3 +1,18 @@
+/* mensajes usuario */
+.foka,
+.ferr {
+    border-width: 3px;
+    border-style: solid;
+}
+
+.foka {
+    border-color: var(--col-sec);
+}
+
+.ferr {
+    border-color: var(--col-err);
+}
+
 #USER_NAME {
 	text-decoration: none;
 }
@@ -56,7 +71,6 @@ header #USER_NAME a {
 }
 
 
-
 #horizontal-mobile-message,
 #user-mobile-messages {
 	z-index: 4;
@@ -109,7 +123,7 @@ header #USER_NAME a {
 }
 
 /************ DESKTOP ************/
-@media only screen and (min-width:600px) {
+	@media only screen 	and (orientation: landscape) and (hover: hover) {
 
 	
 	.off,

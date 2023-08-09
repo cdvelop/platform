@@ -68,7 +68,8 @@ input[type=search],
 
 
 /*********** DESKTOP ************/
-@media only screen and (min-width:600px) {
+/* @media only screen and (min-width:600px) { */
+	@media only screen and (orientation: landscape) and (hover: hover) {
 
 	.search-container {
 		background: #ffffff;

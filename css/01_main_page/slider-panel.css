@@ -32,8 +32,7 @@
 
 
 /************ DESKTOP ************/
-@media only screen and (min-width:600px) {
-
+	@media only screen 	and (orientation: landscape) and (hover: hover) {
 
 	.slider_panel {
 		/* border: .1vw solid var(--col-gra); */
