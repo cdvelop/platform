@@ -56,6 +56,3 @@ function closeMobileMessage() {
 	document.documentElement.style.setProperty('--time-read-waiting', '0s');
 }
 
-function Saludo(message) {
-	console.log("SALUDANDO: ",message);
-}

@@ -9,7 +9,7 @@
 	display: flex;
 	border-radius: .4em 0em 0em .4em;
 	background-color: var(--col-sec);
-	width: 15%;
+	width: 4em;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 50%;
@@ -68,8 +68,7 @@ input[type=search],
 
 
 /*********** DESKTOP ************/
-/* @media only screen and (min-width:600px) { */
-	@media only screen and (orientation: landscape) and (hover: hover) {
+@media only screen and (orientation: landscape) and (hover: hover) {
 
 	.search-container {
 		background: #ffffff;

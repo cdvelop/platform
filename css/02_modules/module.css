@@ -62,7 +62,6 @@ h1 {
 
 /************ DESKTOP ************/
 @media only screen and (orientation: landscape) and (hover: hover) {
-/* @media only screen and (min-width:600px) { */
 
 	.form-inputs-container {
 		border-radius: .4em .4em 0em 0em;

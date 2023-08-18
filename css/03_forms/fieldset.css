@@ -67,10 +67,10 @@ legend:hover {
 }
 
 /************ DESKTOP ************/
-@media only screen and (min-width:600px) {
+@media only screen and (orientation: landscape) and (hover: hover) {
 
     fieldset {
-        
+
         min-height: 5em;
         padding: .7em 1em 0em 1em;
     }

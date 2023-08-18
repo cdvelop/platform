@@ -71,6 +71,7 @@ input::placeholder {
     color: var(--col-ter);
     font-size: .9em;
     font-weight: normal;
+
 }
 
 
@@ -117,7 +118,7 @@ select::-webkit-scrollbar {
 input[type=text] {
     /* width: auto; */
     /* display: none; */
-    position: absolute;
+    /* position: absolute; */
 }
 
 
