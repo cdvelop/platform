@@ -68,6 +68,10 @@ button {
 /************ DESKTOP ************/
 @media only screen and (orientation: landscape) and (hover: hover) {
 
+    input::placeholder {
+        font-size: .8rem;
+    }
+
     button[name*="btn"] {
 
         margin: var(--mag-sec);

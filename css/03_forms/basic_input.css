@@ -17,17 +17,13 @@ textarea {
     border: 0;
     outline: 0;
     background: none;
-    width: auto;
+    width: 100%;
 }
 
 input[type=text]:focus,input[type=number]:focus,input[type=password]:focus {
     border-bottom: 1px solid var(--col-select);
 }
 
-textarea {
-    resize: none;
-    overflow: hidden;
-}
 
 /* textarea::-webkit-scrollbar { */
     /* width: .2em; */
@@ -137,41 +133,8 @@ input[type=time]::after {
     font-size: 1rem;
 }
 
-.age-number input {
-    /* margin-top: 10px; */
-    /* top: 10px; */
-    width: 8%;
-}
 
-.age-number:after,
-.age-date::before {
-    color: var(--col-ter);
-    /* font-size: 70%; */
-    font-size: .8rem;
-}
 
-label.age-number:after {
-    content: 'Años';
-}
-
-.age-date input {
-    width: 140px;
-    /* width: 60%; */
-
-    float: right;
-}
-
-.age-date {
-    float: right;
-}
-
-.age-date::before {
-    /* padding: 0 5px 0 0; */
-    vertical-align: -20%;
-    
-    content: 'Fecha Nacimiento:';
-    margin-right: 7px;
-}
 
 
 

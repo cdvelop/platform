@@ -123,7 +123,7 @@ header #USER_NAME a {
 }
 
 /************ DESKTOP ************/
-	@media only screen 	and (orientation: landscape) and (hover: hover) {
+@media only screen 	and (orientation: landscape) and (hover: hover) {
 
 	
 	.off,

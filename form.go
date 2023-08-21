@@ -6,8 +6,8 @@ import (
 	"github.com/cdvelop/model"
 )
 
-func formTemplate(object_name, input_tags string) string {
-	return `<form class="form-distributed-fields" id="` + object_name + `-form" name="` + object_name + `-form" autocomplete="off">
+func formTemplate(object_name, object_id, input_tags string) string {
+	return `<form class="form-distributed-fields" id="` + object_id + `" name="` + object_name + `-form" autocomplete="off">
 	` + input_tags + `
 	</form>`
 }
@@ -84,7 +84,7 @@ func (t Theme) buildHtmlForm(o *model.Object) string {
 
 				tag := f.Input.HtmlTag(id, f.Name, f.SkipCompletionAllowed)
 
-				if f.Input.InputName != "hidden" {
+				if f.Input.HtmlName() != "hidden" {
 
 					input_tags += t.inputTemplate(o.Name, f.Name, f.Legend, f.Input.HtmlName(), tag, index) + "\n"
 
@@ -95,7 +95,7 @@ func (t Theme) buildHtmlForm(o *model.Object) string {
 
 			}
 
-			return formTemplate(o.Name, input_tags)
+			return formTemplate(o.Name, o.ID(), input_tags)
 		}
 
 	}
