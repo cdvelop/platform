@@ -29,13 +29,6 @@ button {
     outline: 0;
 }
 
-.del {
-    color: var(--col-cua);
-    font-size: 1.3em;
-    text-shadow: 0.1em 0.1em 0.1em #ffffff;
-}
-
-
 .contebuton {
     display: flex;
     height: 100%;

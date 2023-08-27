@@ -22,14 +22,14 @@ func (t Theme) inputTemplate(object_name, field_name, legend, html_name, input_t
 
 	id := inputIdTemplate(object_name, field_name, st_index)
 
-	return `<fieldset data-name="` + field_name + `" tabindex="` + st_index + `"` + cssClass(html_name) + `>
+	return `<fieldset data-name="` + field_name + `" tabindex="` + st_index + `"` + cssClass(html_name) + ` onclick="internalFocus(this)" >
 	<legend><label for="` + id + `">` + legend + `</label></legend>
 	` + input_tag + `
     </fieldset>`
 }
 
 func inputIdTemplate(object_name, field_name, index string) string {
-	return `form.` + object_name + `.` + field_name + `.` + index
+	return object_name + `.` + field_name + `.` + index
 }
 
 func cssClass(html_name string) string {
@@ -51,25 +51,25 @@ func cssClass(html_name string) string {
 	return ` class="` + css + `"`
 }
 
-func (t Theme) JsFormVariablesTemplate(object_name string) string {
-	return `const form = module.querySelector('#` + object_name + `-form');
-	const fieldset = module.querySelectorAll("#` + object_name + `-form fieldset");`
-}
+// func (t Theme) JsFormVariablesTemplate(object_name string) string {
+// 	return `const form = module.querySelector('#` + object_name + `-form');
+// 	const fieldset = module.querySelectorAll("#` + object_name + `-form fieldset");`
+// }
 
-func (Theme) JsInputVariableTemplate(field_name, html_name string) string {
+// func (Theme) JsInputVariableTemplate(field_name, html_name string) string {
 
-	query_type := `querySelector`
+// 	query_type := `querySelector`
 
-	switch html_name {
-	case "radio":
-		query_type = `querySelectorAll`
-	case "checkbox":
-		query_type = `querySelectorAll`
-	}
+// 	switch html_name {
+// 	case "radio":
+// 		query_type = `querySelectorAll`
+// 	case "checkbox":
+// 		query_type = `querySelectorAll`
+// 	}
 
-	return `let input_` + field_name + ` = form.` + query_type + `("[name='` + field_name + `']");\n`
+// 	return `let input_` + field_name + ` = form.` + query_type + `("[name='` + field_name + `']");\n`
 
-}
+// }
 
 func (t Theme) buildHtmlForm(o *model.Object) string {
 

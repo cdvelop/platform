@@ -12,3 +12,7 @@ func (Theme) FolderPath() string {
 	dir := filepath.Dir(filename)
 	return filepath.ToSlash(dir)
 }
+
+func (Theme) FunctionMessageName() string {
+	return "ShowMessageToUser"
+}

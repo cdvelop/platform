@@ -1,4 +1,12 @@
 /* mensajes usuario */
+
+.permanent {
+    color: var(--col-cua);
+    font-size: 1.3em;
+    text-shadow: 0.1em 0.1em 0.1em #ffffff;
+}
+
+
 .foka,
 .ferr {
     border-width: 3px;

@@ -1,42 +1,37 @@
-const user_desktop_messages = document.getElementById('user-desktop-messages');
-let user_mobile_messages = document.getElementById('user-mobile-messages');
+const user_message_update = document.getElementById('user-desktop-messages');
 
+function ShowMessageToUser(message, ...options) {
+	// console.log("MENSAJE: ", message, " OPCIONES: ", options)
 
-function ShowMessageType(data) {
-	let seconds = "" + HowManyWords(data.Message);
-	if (data.Message != "") {
+	const keywords = ["del", "perm", "stop"];
 
-		let tipo;
-		switch (data.Action) {
-			case "error":
-				tipo = "err"
+	if (message != "") {
+		let seconds = "" + HowManyWords(message);
+		let tipo = "ok"; // Valor predeterminado
+
+		for (let i = 0; i < options.length; i++) {
+
+			if (options[i].includes("err")) {
+				tipo = "err";
 				seconds = "240";
+				break; 
+			} else if (keywords.some(keyword => options[i].includes(keyword)))  {
+				tipo = "permanent";
 				break;
-
-			case "del":
-				tipo = "del";
-				break;
-
-			default:
-				tipo = "ok"
-				break;
+			}
 		}
 
-		// console.log("tamaño mensaje", data.Message.length, "PALABRAS: ", seconds)
 		document.documentElement.style.setProperty('--time-read-waiting', seconds + 's');
 
-		const message_out = '<H4 class="' + tipo + '">' + data.Message + '</H4>';
+		const message_out = '<H4 class="' + tipo + '">' + message + '</H4>';
 
-		if (screen.width <= 600) {
-			user_mobile_messages.innerHTML = message_out;
-		} else {
-			user_desktop_messages.innerHTML = message_out;
-		}
+		user_message_update.innerHTML = message_out;
 
+		// Resto del código...
 		if (tipo == "err") {
-			console.log(data);
+			console.log(message);
 		}
-	};
+	}
 };
 
 function HowManyWords(text) {

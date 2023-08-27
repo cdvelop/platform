@@ -20,6 +20,6 @@ function NewRequest(props) {
     })
     .then(json => response(json))
     .catch(error => {
-      ShowMessageType({"Action":"error","Message":error.toString()})
+      ShowMessageToUser({"Action":"error","Message":error.toString()})
     });
   }

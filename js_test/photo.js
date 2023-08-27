@@ -1,4 +1,4 @@
 
 
 clickButtonMenuByModuleName("photo")
-// ShowMessageType("err","MENSAJE PRUEBA ERROR CORTO")
+// ShowMessageToUser("err","MENSAJE PRUEBA ERROR CORTO")
