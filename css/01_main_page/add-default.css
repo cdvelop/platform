@@ -1,4 +1,7 @@
 :root {
+    --font-size-normal:1.1rem;
+    --font-size-small:.6rem;
+
     --col-pri: #ffffff;
     --col-sec: #3f88bf;
     --col-ter: #c2c1c1;
