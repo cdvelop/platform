@@ -1,5 +1,8 @@
 function updateInputClass(input, classesToAdd, classesToRemove) {
     let fd = input.closest('fieldset');
+
+    // console.log("FIELDSET SELECCIONADO: ",fd," classesToAdd: ",classesToAdd," classesToRemove: ",classesToRemove)
+
     if (fd != null) {
         if (classesToAdd && classesToAdd.length > 0) {
             fd.classList.add(...classesToAdd);
@@ -15,8 +18,8 @@ function inputRight(input) {
     updateInputClass(input, ["foka"], ["ferr"]);
 }
 
-function inputWrong(input) {
-    // console.log("INPUT Wrong RECIBIDO: ", input);
+function inputWrong(input,...message) {
+    // console.log("INPUT Wrong RECIBIDO: ", input,"mensaje ", message);
     updateInputClass(input, ["ferr"], ["foka"]);
 }
 
@@ -51,24 +54,26 @@ function internalFocus(container) {
 
 
 function checkMultipleInputs(input) {
-    const father = input.parentNode.parentNode
-	const checkboxes = father.querySelectorAll('input[type="'+input.type+'"]');
-	let all_selected = true;
+    // const father = input.parentNode.parentNode
+	// const checkboxes = father.querySelectorAll('input[type="'+input.type+'"]');
+	// let all_selected = true;
 
-	for (const cb of checkboxes) {
-		if (cb.checked) {
-			all_selected = false;
-			break;
-		}
-	}
+	// for (const cb of checkboxes) {
+	// 	if (cb.checked) {
+	// 		all_selected = false;
+	// 		break;
+	// 	}
+	// }
 
-	if (all_selected) {
-		if (input.hasAttribute('required')) {
-			inputWrong(input);
-		} else {
-			inputNormal(input);
-		}
-	} else {
-		inputRight(input);
-	}
+	// if (all_selected) {
+	// 	if (!input.hasAttribute('required')) {
+    //         inputNormal(input);
+	// 	} else {
+	// 		// inputWrong(input);
+	// 	}
+	// } else {
+	// 	// inputRight(input);
+	// }
+
+    userTyping(input)
 }
