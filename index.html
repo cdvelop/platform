@@ -11,6 +11,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<link rel="icon" type="image/png" href="static/favicon.png">
 	<link rel="stylesheet" href="{{.StyleSheet}}">
+	<meta name="DataBootActions" content="{{.DataBootActions}}">
 	<title>{{.AppName}}-ver.{{.AppVersion}}</title>
 </head>
 
@@ -77,9 +78,8 @@
 	</div>
 	<div id="incompatible-message">
 		<H4>MODO DE VISUALIZACIÓN INCOMPATIBLE</H4>
-	 </div> 
+	 </div>
 	{{.Modules}} 
 	<script src="{{.Script}}"></script>
 </body>
-
 </html>

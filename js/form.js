@@ -75,5 +75,5 @@ function checkMultipleInputs(input) {
 	// 	// inputRight(input);
 	// }
 
-    userTyping(input)
+    userFormTyping(input)
 }

@@ -13,7 +13,7 @@ h1 {
 }
 
 .module-title h1 {
-	margin-left: calc(.2em);
+	/* margin-left: 5px; */
 	text-align: left;
 	color: var(--col-pri);
 	text-shadow: 1px 1px var(--col-cua);
@@ -62,6 +62,7 @@ h1 {
 
 /************ DESKTOP ************/
 @media only screen and (orientation: landscape) and (hover: hover) {
+
 
 	.form-inputs-container {
 		border-radius: .4em .4em 0em 0em;
