@@ -1,6 +1,6 @@
 package platform
 
-func headerTarget() string {
+func oldHeaderTarget() string {
 	return `<div class="target-module">
 	<select name="select">
 		<option value="value1">Value 1</option>

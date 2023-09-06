@@ -14,10 +14,10 @@ func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, option
 
 	out := `<div class="header-module">
 	<div class="module-title">
-		<h1>` + m.Title + `:</h1>
+		<h1>` + m.Title + `:XXX</h1>
 	</div>`
 
-	out += headerTarget()
+	out += m.HeaderInputTarget
 
 	out += `</div>`
 
