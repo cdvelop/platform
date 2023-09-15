@@ -19,9 +19,9 @@ func buttons() string {
 
 	out += `<button name="btn_add" title="Iniciar Captura de Imagen">
 	<svg aria-hidden="true" focusable="false" class="form-btn">
-		<use xlink:href="#icon-btn-new" />
+	<use xlink:href="#icon-btn-new" />
 	</svg>
-</button>`
+	</button>`
 
 	out += `<!-- <button name="btn_save" title="Tomar Fotografia" disabled>
 	<svg aria-hidden="true" focusable="false" class="form-btn">

@@ -6,8 +6,8 @@ import (
 	"github.com/cdvelop/model"
 )
 
-func formTemplate(object_name, object_id, input_tags string) string {
-	return `<form class="form-distributed-fields" id="` + object_id + `" name="` + object_name + `-form" autocomplete="off">
+func formTemplate(object_name, input_tags string) string {
+	return `<form class="form-distributed-fields" name="` + object_name + `" autocomplete="off">
 	` + input_tags + `
 	</form>`
 }
@@ -75,7 +75,7 @@ func (t Theme) buildHtmlForm(o *model.Object) string {
 
 	if o != nil {
 
-		if o.Module() != nil && len(o.Fields) != 0 {
+		if o.Module != nil && len(o.Fields) != 0 {
 			var input_tags string
 
 			for index, f := range o.RenderFields() {
@@ -95,7 +95,7 @@ func (t Theme) buildHtmlForm(o *model.Object) string {
 
 			}
 
-			return formTemplate(o.Name, o.ID(), input_tags)
+			return formTemplate(o.Name, input_tags)
 		}
 
 	}
