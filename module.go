@@ -32,12 +32,12 @@ func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, option
 		</div>
 
 		<div id="device-search-form" class="search-container">
-			<label for="search_device">
+			<label for="filter-object">
 				<svg aria-hidden="true" focusable="false" class="form-btn">
 					<use xlink:href="#icon-search" />
 				</svg>
 			</label>
-			<input type="search" id="search-footer-device" title="letras numeros - permitidos max 50 caracteres"
+			<input type="search" id="filter-object" title="letras números - permitidos max 50 caracteres"
 				pattern="^[A-Za-zÑñ 0-9-]{1,20}$">
 		</div>
 
