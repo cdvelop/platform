@@ -6,7 +6,7 @@ func (Theme) ModuleClassName() string {
 	return "slider_panel"
 }
 
-func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, options ...string) string {
+func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list model.HtmlContainer) string {
 
 	if m == nil {
 		return "error al generar template modulo no ingresado"
@@ -23,25 +23,15 @@ func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, option
 
 	out += `<div class="scroll-container">
 
-	<div class="box-snap search-list-container">
+	<div class="box-snap search-list-container">`
 
-		<div class="container-list-search">
-		
+	if list != nil {
+		out += list.HtmlContainer()
+	} else {
+		out += `<div class="container-list-only"></div>`
+	}
 
-
-		</div>
-
-		<div id="device-search-form" class="search-container">
-			<label for="filter-object">
-				<svg aria-hidden="true" focusable="false" class="form-btn">
-					<use xlink:href="#icon-search" />
-				</svg>
-			</label>
-			<input type="search" id="filter-object" title="letras números - permitidos max 50 caracteres"
-				pattern="^[A-Za-zÑñ 0-9-]{1,20}$">
-		</div>
-
-	</div>
+	out += `</div>
 
 	<div class="box-snap edition-container">
 
@@ -50,8 +40,7 @@ func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, option
 
 	out += t.buildHtmlForm(form_object)
 
-	out += `</div>
-		</div>`
+	out += `</div></div>`
 
 	out += buttons()
 
@@ -60,3 +49,17 @@ func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, option
 
 	return out
 }
+
+// `<div class="container-list-search">
+
+// 		</div>
+
+// 		<div id="device-search-form" class="search-container">
+// 			<label for="filter-object">
+// 				<svg aria-hidden="true" focusable="false" class="form-btn">
+// 					<use xlink:href="#icon-search" />
+// 				</svg>
+// 			</label>
+// 			<input type="search" id="filter-object" title="letras números - permitidos max 50 caracteres"
+// 				pattern="^[A-Za-zÑñ 0-9-]{1,20}$">
+// 		</div>`

@@ -114,6 +114,7 @@
 	/* color: var(--col-pri); */
 	position: relative;
 	display: inline-flex;
+	/* min-height: 300px; */
 	min-height: 60px;
 	max-height: 60px;
 	/* width: 100%; */
