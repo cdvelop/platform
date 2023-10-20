@@ -1,6 +1,7 @@
 package platform
 
 import (
+	"fmt"
 	"strconv"
 
 	"github.com/cdvelop/model"
@@ -35,17 +36,18 @@ func inputIdTemplate(object_name, field_name, index string) string {
 func cssClass(html_name string) string {
 	var css string
 
+	fmt.Println("HTML NAME:", html_name)
+
 	switch html_name {
 
-	case "checkbox":
+	case "checkbox", "textarea":
 		css = "min-width-100"
 
-	case "textarea":
-		css = "min-width-100"
+	case "file":
+		css = "fieldset-file"
 
 	default:
 		css = "max-height-100"
-
 	}
 
 	return ` class="` + css + `"`

@@ -23,18 +23,23 @@ fieldset[data-err]::before {
     position: absolute;
     top: 0;
     right: 0;
-    color:  var(--col-err); 
+    color: var(--col-err);
     font-size: var(--font-size-small);
-    padding-right: 5px; 
+    padding-right: 5px;
 }
 
 .max-height-100 {
     max-height: 5em;
 }
 
-.min-width-100 {
+.min-width-100,
+.fieldset-file {
     width: 100%;
     min-width: 98%;
+}
+
+.fieldset-file {
+    height: 9em;
 }
 
 fieldset input {
@@ -64,7 +69,7 @@ legend {
     border-color: var(--col-pri);
     border-radius: .4em;
     padding: 0em .5em .3em .5em;
-    margin-bottom: .3em;
+    /* margin-bottom: .3em; */
 }
 
 legend label {
@@ -80,13 +85,23 @@ legend:hover {
     background-color: var(--col-select);
 }
 
+.fieldset-file {
+    padding: 0em 0.2em 0.2em 0.2em;
+}
+
+.fieldset-file legend {
+    position:static;
+    margin-left: 1em;
+    margin-bottom: 0;
+    /* margin-top: -1em; */
+}
+
 /************ DESKTOP ************/
 @media only screen and (orientation: landscape) and (hover: hover) {
 
     fieldset {
-
-        min-height: 5em;
         padding: .7em 1em 0em 1em;
     }
+
 
 }

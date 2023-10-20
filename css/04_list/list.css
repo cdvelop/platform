@@ -23,38 +23,11 @@
 	overflow-x: hidden;
 }
 
-.col-img {
-	min-height: 150px;
-	min-width: 200px;
-	margin-bottom: 30px;
-	position: relative;
-}
-
-.img-list {
-	width: 100%;
-	height: 100%;
-	/* border: 2px solid red; */
-
-}
-
-.checkbox-container {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
-
-.checkbox-container input[type="checkbox"]:checked + .img-list {
-	border: 2px solid red;
-  }
 
 
 
-.checkbox-container label {
-	display: block;
-	height: 100%;
-	width: 100%;
-}
+
+
 
 @media screen and (max-width: 1300px) {
 	.col-img {
