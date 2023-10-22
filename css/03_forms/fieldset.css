@@ -1,3 +1,7 @@
+:root {
+    --fielsdet-width: 100vw;
+}
+
 fieldset {
     background: var(--col-pri);
     border-color: var(--col-gra);
@@ -6,8 +10,10 @@ fieldset {
     min-width: 49%;
     min-height: 7em;
     flex: auto;
-    margin: .2em;
-    margin-bottom: .5em;
+    /* margin: .2em; */
+    /* margin: 2vw; */
+    margin: 0.2em .5vw 10px .5vw;
+    /* margin-bottom: .5em; */
 
     /* display: flex; */
     /* align-items: center; */
@@ -98,6 +104,9 @@ legend:hover {
 
 /************ DESKTOP ************/
 @media only screen and (orientation: landscape) and (hover: hover) {
+    :root {
+        --fielsdet-width: 60vw;
+    }
 
     fieldset {
         padding: .7em 1em 0em 1em;

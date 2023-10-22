@@ -43,7 +43,7 @@ function HowManyWords(text) {
 }
 
 if (screen.width <= 600) {
-	user_mobile_messages.addEventListener('click', closeMobileMessage)
+	// user_mobile_messages.addEventListener('click', closeMobileMessage)
 }
 
 function closeMobileMessage() {

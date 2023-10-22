@@ -78,6 +78,18 @@ header #USER_NAME a {
 	}
 }
 
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
 
 #horizontal-mobile-message,
 #user-mobile-messages {

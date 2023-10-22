@@ -23,7 +23,12 @@ func (t Theme) inputTemplate(object_name, field_name, legend, html_name, input_t
 
 	id := inputIdTemplate(object_name, field_name, st_index)
 
-	return `<fieldset data-name="` + field_name + `" tabindex="` + st_index + `"` + cssClass(html_name) + ` onclick="internalFocus(this)" >
+	auto_focus := ` onclick="internalFocus(this)"`
+	if html_name == "file" {
+		auto_focus = ``
+	}
+
+	return `<fieldset data-name="` + field_name + `" tabindex="` + st_index + `"` + cssClass(html_name) + auto_focus + `>
 	<legend><label for="` + id + `">` + legend + `</label></legend>
 	` + input_tag + `
     </fieldset>`

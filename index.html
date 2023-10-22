@@ -65,7 +65,7 @@
 			{{.Menu}}
 		</ul>
 	</nav>
-	 <header>
+	<header>
 		<div id="USER_NAME"><a href="#login" name="login" title="Cerrar Sesion">{{.UserName}}</a></div>
 		<div id="user-desktop-messages">
 			<H4 class="err">{{.Message}}</H4>
@@ -76,10 +76,12 @@
 	<div id="user-mobile-messages">
 		<H4 class="err">{{.Message}}</H4>
 	</div>
-	<div id="incompatible-message">
+	<div id="modal-window" onclick="modalHandler(event)">
 		<H4>MODO DE VISUALIZACIÓN INCOMPATIBLE</H4>
-	 </div>
-	{{.Modules}} 
+	</div>
+
+	{{.Modules}}
 	<script src="{{.Script}}"></script>
 </body>
+
 </html>
