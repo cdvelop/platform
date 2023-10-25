@@ -22,16 +22,17 @@ func (t Theme) inputTemplate(object_name, field_name, legend, html_name, input_t
 	st_index := strconv.Itoa(index)
 
 	id := inputIdTemplate(object_name, field_name, st_index)
-
-	auto_focus := ` onclick="internalFocus(this)"`
+	var out string
 	if html_name == "file" {
-		auto_focus = ``
+		return input_tag
 	}
 
-	return `<fieldset data-name="` + field_name + `" tabindex="` + st_index + `"` + cssClass(html_name) + auto_focus + `>
-	<legend><label for="` + id + `">` + legend + `</label></legend>
+	out = `<fieldset data-name="` + field_name + `" tabindex="` + st_index + `"` + cssClass(html_name) + ` onclick="internalFocus(this)">
+	<legend class="basic-legend"><label for="` + id + `">` + legend + `</label></legend>
 	` + input_tag + `
     </fieldset>`
+
+	return out
 }
 
 func inputIdTemplate(object_name, field_name, index string) string {
@@ -39,23 +40,23 @@ func inputIdTemplate(object_name, field_name, index string) string {
 }
 
 func cssClass(html_name string) string {
-	var css string
+	var class = `normal border`
 
 	fmt.Println("HTML NAME:", html_name)
 
 	switch html_name {
 
 	case "checkbox", "textarea":
-		css = "min-width-100"
+		class += ` all-width`
 
-	case "file":
-		css = "fieldset-file"
+	// case "file":
+	// 	class = `file`
 
 	default:
-		css = "max-height-100"
+		class += ` width-auto`
 	}
 
-	return ` class="` + css + `"`
+	return ` class="` + class + `"`
 }
 
 // func (t Theme) JsFormVariablesTemplate(object_name string) string {

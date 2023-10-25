@@ -1,18 +1,20 @@
 :root {
-    --fielsdet-width: 100vw;
+    --field-width: 100vw;
+    --field-height:7.5em;
+    /* --field-height:7.5em; */
 }
 
-fieldset {
+fieldset.normal {
     background: var(--col-pri);
-    border-color: var(--col-gra);
+    /* border-color: var(--col-gra); */
     border-radius: .4em;
     /* width: auto; */
     min-width: 49%;
-    min-height: 7em;
+    min-height: var(--field-height);
     flex: auto;
     /* margin: .2em; */
     /* margin: 2vw; */
-    margin: 0.2em .5vw 10px .5vw;
+    margin: .5vh .5vw .5vh .5vw;
     /* margin-bottom: .5em; */
 
     /* display: flex; */
@@ -20,11 +22,11 @@ fieldset {
     padding: 1em 1em .5em 1em;
 }
 
-fieldset[data-err] {
+fieldset.normal[data-err] {
     position: relative;
 }
 
-fieldset[data-err]::before {
+fieldset.normal[data-err]::before {
     content: attr(data-err);
     position: absolute;
     top: 0;
@@ -34,82 +36,77 @@ fieldset[data-err]::before {
     padding-right: 5px;
 }
 
-.max-height-100 {
+
+.all-width {
+    width: 100%;
+    min-width: 100%;
+}
+
+.width-auto{
     max-height: 5em;
 }
 
-.min-width-100,
-.fieldset-file {
-    width: 100%;
-    min-width: 98%;
+.border{
+   border-color: var(--col-gra); 
 }
 
-.fieldset-file {
-    height: 9em;
-}
 
-fieldset input {
+
+fieldset.normal input {
     margin-top: var(--mag-sec);
 }
 
-fieldset:focus-within,
-fieldset:focus-visible {
+
+fieldset.normal:focus-within,
+fieldset.normal:focus-visible {
     box-shadow: 0px 0px 3px 1px var(--col-select) inset;
 }
 
 
-fieldset:disabled {
+fieldset.normal:disabled {
     background-color: var(--col-gra);
     pointer-events: none;
 }
 
-fieldset:hover {
+fieldset.file:hover,
+fieldset.normal:hover {
     /* border: 2px solid var(--col-sec); */
     /* box-shadow:0px 0px 3px 1px var(--col-sec) inset; */
     box-shadow: 0px 0px 3px 1px var(--col-select) inset;
 }
 
-legend {
+legend.basic-legend {
     font-size: .8rem;
     background: var(--col-sec);
     border-color: var(--col-pri);
     border-radius: .4em;
     padding: 0em .5em .3em .5em;
     /* margin-bottom: .3em; */
+    margin-left: 1.5em;
 }
 
-legend label {
+legend.basic-legend label {
     color: var(--col-pri);
     text-shadow: 1px 1px var(--col-cua);
 }
 
-label {
-    cursor: pointer;
-}
 
-legend:hover {
+legend.basic-legend:hover {
     background-color: var(--col-select);
 }
 
-.fieldset-file {
-    padding: 0em 0.2em 0.2em 0.2em;
-}
 
-.fieldset-file legend {
-    position:static;
-    margin-left: 1em;
-    margin-bottom: 0;
-    /* margin-top: -1em; */
-}
+
+
 
 /************ DESKTOP ************/
 @media only screen and (orientation: landscape) and (hover: hover) {
     :root {
-        --fielsdet-width: 60vw;
+        --field-width: 63vw;
     }
 
-    fieldset {
-        padding: .7em 1em 0em 1em;
+    fieldset.normal {
+        /* padding: .7em 1em 0em 1em; */
     }
 
 

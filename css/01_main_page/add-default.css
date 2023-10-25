@@ -46,13 +46,7 @@
 }
 
 
-svg.sprite-icons{
-    display: none;
-    position: absolute;
-    width: 0; 
-    height: 0; 
-    overflow: hidden;
-}
+
 
 
 picture[name*="logo"] {

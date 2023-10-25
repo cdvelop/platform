@@ -36,8 +36,6 @@ document.querySelector(".menu-container").addEventListener("click", function (e)
 	OnOffHash(hash_target);
 });
 
-
-
 // prendo apago link botones rutas
 function OnOffHash(hash_now) {
 	if (HASH_OLD === undefined) {

@@ -10,8 +10,6 @@
 	display: none;/* Ocultar el mensaje por defecto */
 	background: var(--col-sec);
 
-    /* opacity: 0; Inicialmente, configurar la opacidad en 0 */
-	/* transition: opacity 5s; Agregar una transición suave de 0.3 segundos para la opacidad */
     animation: fadeIn 1s;
 }
 

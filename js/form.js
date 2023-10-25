@@ -1,4 +1,5 @@
 function updateInputClass(input, classesToAdd, classesToRemove,message) {
+    
     let fd = input.closest('fieldset');
 
     // console.log("FIELDSET SELECCIONADO: ",fd," classesToAdd: ",classesToAdd," classesToRemove: ",classesToRemove)
@@ -15,17 +16,17 @@ function updateInputClass(input, classesToAdd, classesToRemove,message) {
 
 function inputRight(input) {
     // console.log("INPUT Right RECIBIDO: ", input);
-    updateInputClass(input, ["foka"], ["ferr"],"");
+    updateInputClass(input, ["foka"], ["ferr","border"],"");
 }
 
 function inputWrong(input,message) {
     // console.log("INPUT Wrong:", message,input);
-    updateInputClass(input, ["ferr"], ["foka"],message);
+    updateInputClass(input, ["ferr"], ["foka","border"],message);
 }
 
 function inputNormal(input) {
     // console.log("INPUT normal RECIBIDO: ", input);
-    updateInputClass(input, [], ["ferr", "foka"],"");
+    updateInputClass(input, ["border"], ["ferr", "foka"],"");
 }
 
 

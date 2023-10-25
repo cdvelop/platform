@@ -34,6 +34,7 @@ function ShowModal(opt, data) {
 
 
 
+
 // Función que muestra u oculta el mensaje según el tipo de dispositivo
 function showIncompatibleMessage() {
   // function isMobileDevice() {
