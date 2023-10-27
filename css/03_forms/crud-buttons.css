@@ -13,6 +13,7 @@ button[name*="btn"] {
     /* color:var(--col-pri) */
 }
 
+button[name="capture"]:disabled,
 button[name*="btn"]:disabled {
     background-color: var(--col-ter);
     pointer-events: none;

@@ -1,6 +1,6 @@
 :root {
     --field-width: 100vw;
-    --field-height:7.5em;
+    --field-height: 7.5em;
     /* --field-height:7.5em; */
 }
 
@@ -42,12 +42,12 @@ fieldset.normal[data-err]::before {
     min-width: 100%;
 }
 
-.width-auto{
+.width-auto {
     max-height: 5em;
 }
 
-.border{
-   border-color: var(--col-gra); 
+.border {
+    border-color: var(--col-gra);
 }
 
 
@@ -63,8 +63,14 @@ fieldset.normal:focus-visible {
 }
 
 
+fieldset.file:disabled,
 fieldset.normal:disabled {
     background-color: var(--col-gra);
+    pointer-events: none;
+}
+fieldset.file:disabled legend,
+fieldset.normal:disabled legend {
+    background-color: var(--col-ter);
     pointer-events: none;
 }
 
