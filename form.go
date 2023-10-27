@@ -1,7 +1,6 @@
 package platform
 
 import (
-	"fmt"
 	"strconv"
 
 	"github.com/cdvelop/model"
@@ -42,7 +41,7 @@ func inputIdTemplate(object_name, field_name, index string) string {
 func cssClass(html_name string) string {
 	var class = `normal border`
 
-	fmt.Println("HTML NAME:", html_name)
+	// fmt.Println("HTML NAME:", html_name)
 
 	switch html_name {
 
