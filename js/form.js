@@ -1,5 +1,11 @@
-function updateInputClass(input, classesToAdd, classesToRemove,message) {
-    
+
+function getObjectIdFromForm(form) {
+    const id_object = form.querySelector(`[name="` + form.dataset.field_id + `"]`)
+    return id_object.value
+}
+
+function updateInputClass(input, classesToAdd, classesToRemove, message) {
+
     let fd = input.closest('fieldset');
 
     // console.log("FIELDSET SELECCIONADO: ",fd," classesToAdd: ",classesToAdd," classesToRemove: ",classesToRemove)
@@ -14,19 +20,20 @@ function updateInputClass(input, classesToAdd, classesToRemove,message) {
     }
 }
 
+
 function inputRight(input) {
     // console.log("INPUT Right RECIBIDO: ", input);
-    updateInputClass(input, ["foka"], ["ferr","border"],"");
+    updateInputClass(input, ["foka"], ["ferr", "border"], "");
 }
 
-function inputWrong(input,message) {
+function inputWrong(input, message) {
     // console.log("INPUT Wrong:", message,input);
-    updateInputClass(input, ["ferr"], ["foka","border"],message);
+    updateInputClass(input, ["ferr"], ["foka", "border"], message);
 }
 
 function inputNormal(input) {
     // console.log("INPUT normal RECIBIDO: ", input);
-    updateInputClass(input, ["border"], ["ferr", "foka"],"");
+    updateInputClass(input, ["border"], ["ferr", "foka"], "");
 }
 
 
@@ -56,25 +63,25 @@ function internalFocus(container) {
 
 function checkMultipleInputs(input) {
     // const father = input.parentNode.parentNode
-	// const checkboxes = father.querySelectorAll('input[type="'+input.type+'"]');
-	// let all_selected = true;
+    // const checkboxes = father.querySelectorAll('input[type="'+input.type+'"]');
+    // let all_selected = true;
 
-	// for (const cb of checkboxes) {
-	// 	if (cb.checked) {
-	// 		all_selected = false;
-	// 		break;
-	// 	}
-	// }
+    // for (const cb of checkboxes) {
+    // 	if (cb.checked) {
+    // 		all_selected = false;
+    // 		break;
+    // 	}
+    // }
 
-	// if (all_selected) {
-	// 	if (!input.hasAttribute('required')) {
+    // if (all_selected) {
+    // 	if (!input.hasAttribute('required')) {
     //         inputNormal(input);
-	// 	} else {
-	// 		// inputWrong(input);
-	// 	}
-	// } else {
-	// 	// inputRight(input);
-	// }
+    // 	} else {
+    // 		// inputWrong(input);
+    // 	}
+    // } else {
+    // 	// inputRight(input);
+    // }
 
     userFormTyping(input)
 }
