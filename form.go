@@ -89,7 +89,7 @@ func (t Theme) buildHtmlForm(o *model.Object) string {
 
 				id := inputIdTemplate(o.Name, f.Name, strconv.Itoa(index))
 
-				tag := f.Input.HtmlTag(id, f.Name, f.SkipCompletionAllowed)
+				tag := f.Input.BuildContainerView(id, f.Name, f.SkipCompletionAllowed)
 
 				if f.Input.HtmlName() != "hidden" {
 

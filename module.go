@@ -6,7 +6,7 @@ func (Theme) ModuleClassName() string {
 	return "slider_panel"
 }
 
-func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list model.HtmlContainer) string {
+func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list model.ContainerView) string {
 
 	if m == nil {
 		return "error al generar template modulo no ingresado"
@@ -26,7 +26,7 @@ func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list m
 	<div class="box-snap search-list-container">`
 
 	if list != nil {
-		out += list.HtmlContainer()
+		out += list.BuildContainerView("", "", true)
 	} else {
 		out += `<div class="container-list-only"></div>`
 	}
