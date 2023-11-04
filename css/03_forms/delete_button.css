@@ -1,22 +1,26 @@
-
-
-
-  .delete-tab {
+.delete-tab {
     position: absolute;
     top: 0;
-    right: 0; /* Ajusta la posición a la derecha */
-    width: 0; /* Inicialmente, la pestaña no se muestra */
+    right: 0;
+    /* Ajusta la posición a la derecha */
+    width: 0;
+    /* Inicialmente, la pestaña no se muestra */
     height: 100%;
-    background-color: red; /* Color de la pestaña */
-    transition: width 0.3s; /* Agrega una transición para animar el ancho */
-  
+    background-color: red;
+    /* Color de la pestaña */
+    transition: width 0.2s;
+    /* Agrega una transición para animar el ancho */
 
-    /* background-image: url('#icon-btn-delete'); */
-    /* background-image: url('#icon-btn-delete'); */
-    /* background-repeat: no-repeat; */
-    /* background-position: center;  */
-    /* background-size: 16px 16px; Tamaño del ícono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
+.delete-tab::before {
+    content: "";
+    background-color: white;
+    width: 30px;
+    height: 10px;
 
+}

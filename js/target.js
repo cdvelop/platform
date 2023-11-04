@@ -31,8 +31,11 @@ function targetHandler(target, callbackClickHandler, callbackDeleteHandler) {
         }
     }, 100); // Actualiza la barra cada 100 ms
 
+    
+
 
     current_element.target.addEventListener('mouseup', mouseUpTargetHandler)
+    current_element.target.addEventListener('touchend', mouseUpTargetHandler)
 
     current_element.deleteTab.addEventListener('click', cancelDeleteTab)
 
@@ -58,6 +61,8 @@ function resetMouseUpPress(element) {
     // console.log("resetMouseUpPress")
     if (element.hasOwnProperty("target")) {
         element.target.removeEventListener('mouseup', mouseUpTargetHandler)
+        element.target.removeEventListener('touchend', mouseUpTargetHandler)
+        
         element.deleteTab.removeEventListener('click', cancelDeleteTab)
     }
 }
