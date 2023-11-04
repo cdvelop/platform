@@ -7,7 +7,7 @@ function modalHandler(e) {
 
   switch (e.pointerType) {
     case "touch":
-
+      ShowModal(false, "")
       break;
     case "mouse":
       ShowModal(false, "")
@@ -15,7 +15,7 @@ function modalHandler(e) {
 
   }
 
-  console.log(e.pointerType)
+  // console.log(e.pointerType)
 
 }
 
