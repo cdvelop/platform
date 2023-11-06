@@ -111,6 +111,16 @@
 }
 
 
+.target-li-on,.target-li-off,.target-list-see{
+	display: block;
+}
+
+
+
+.target-li-off *, .target-li-on *, .target-list-see * {
+	pointer-events: none; /* Desactivar la interacción de los elementos internos */
+}
+
 .target-li-on {
 	background: var(--col-select);
 }

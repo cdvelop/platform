@@ -8,11 +8,23 @@ let current_element = Object();
 function targetHandler(target, callbackClickHandler, callbackDeleteHandler) {
     cancelDeleteTab()// resetear anterior
 
+    // console.log("targetHandler:", target)
+
     let startTime = Date.now();
     current_element.target = target;
     current_element.click = callbackClickHandler;
     current_element.delete = callbackDeleteHandler;
-    current_element.deleteTab = target.parentNode.querySelector('.delete-tab');
+
+
+    const delete_tab = target.querySelector('.delete-tab');
+
+    if (!delete_tab) {
+        console.log("ERROR div delete_tab no encontrado", delete_tab,target)
+        return
+    }
+
+
+    current_element.deleteTab = delete_tab
 
     resetMouseUpPress(current_element);// resetear actual
 
@@ -31,7 +43,7 @@ function targetHandler(target, callbackClickHandler, callbackDeleteHandler) {
         }
     }, 100); // Actualiza la barra cada 100 ms
 
-    
+
 
 
     current_element.target.addEventListener('mouseup', mouseUpTargetHandler)
@@ -62,14 +74,14 @@ function resetMouseUpPress(element) {
     if (element.hasOwnProperty("target")) {
         element.target.removeEventListener('mouseup', mouseUpTargetHandler)
         element.target.removeEventListener('touchend', mouseUpTargetHandler)
-        
+
         element.deleteTab.removeEventListener('click', cancelDeleteTab)
     }
 }
 
 function mouseUpTargetHandler() {
+    // console.log("elapsed_time", elapsed_time)
     if (!finished_time) {
-        // console.log("mouseUpTargetHandler", current_element)
 
         if (elapsed_time <= 300) {
             current_element.click(current_element.target)

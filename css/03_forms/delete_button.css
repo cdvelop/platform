@@ -12,8 +12,8 @@
     /* Agrega una transición para animar el ancho */
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
 }
 
@@ -22,5 +22,5 @@
     background-color: white;
     width: 30px;
     height: 10px;
-
+    margin-left: 5px;
 }
