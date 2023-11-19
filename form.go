@@ -87,13 +87,13 @@ func (t Theme) buildHtmlForm(o *model.Object) string {
 
 			for index, f := range o.RenderFields() {
 
-				id := inputIdTemplate(o.Name, f.Name, strconv.Itoa(index))
+				id := inputIdTemplate(o.ObjectName, f.Name, strconv.Itoa(index))
 
 				tag := f.Input.BuildContainerView(id, f.Name, f.SkipCompletionAllowed)
 
 				if f.Input.HtmlName() != "hidden" {
 
-					input_tags += t.inputTemplate(o.Name, f.Name, f.Legend, f.Input.HtmlName(), tag, index) + "\n"
+					input_tags += t.inputTemplate(o.ObjectName, f.Name, f.Legend, f.Input.HtmlName(), tag, index) + "\n"
 
 				} else {
 
@@ -102,7 +102,7 @@ func (t Theme) buildHtmlForm(o *model.Object) string {
 
 			}
 
-			return formTemplate(o.Name, o.PrimaryKeyName(), input_tags)
+			return formTemplate(o.ObjectName, o.PrimaryKeyName(), input_tags)
 		}
 
 	}

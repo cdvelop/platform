@@ -42,7 +42,7 @@ func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list m
 
 	out += `</div></div>`
 
-	out += buttons(m.ModuleName, form_object.Name)
+	out += buttons(m.ModuleName, form_object.ObjectName)
 
 	out += `</div>
 </div>`
