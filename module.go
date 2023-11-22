@@ -6,7 +6,7 @@ func (Theme) ModuleClassName() string {
 	return "slider_panel"
 }
 
-func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list model.ContainerView) string {
+func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list model.ContainerViewAdapter) string {
 
 	if m == nil {
 		return "error al generar template modulo no ingresado"
