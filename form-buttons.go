@@ -1,21 +1,30 @@
 package platform
 
-func buttons(module_name, object_name string) string {
+import "github.com/cdvelop/model"
 
-	out := `<div class="crud-buttons-container">
-	<div class="contebuton">`
+func buttons(c *model.TemplateModuleConfig) string {
 
-	out += `<button type="button" data-module="` + module_name + `" name="btn_cancel" title="Comenzar Nuevamente" onclick="resetModule(this)">
-	<svg aria-hidden="true" focusable="false" class="form-btn">
-		<use xlink:href="#icon-btn-cancel" />
-	</svg>
-	</button>`
+	out := `<div class="crud-buttons-container"><div class="contebuton">`
 
-	out += `  <button type="button" data-object_name="` + object_name + `" name="btn_printer" title="Imprimir" onclick="printForm(this)">
-	<svg aria-hidden="true" focusable="false" class="form-btn">
-		<use xlink:href="#icon-printer" />
-	</svg>
-</button>`
+	out += BuildHtmlFormButton(ButtonForm{
+		ModuleName: c.Module.ModuleName,
+		ButtonName: "btn_cancel",
+		Title:      "Comenzar Nuevamente",
+		IconID:     "icon-btn-cancel",
+		OnclickFun: "resetModule(this)",
+	})
+
+	if c.ButtonPrint {
+
+		out += BuildHtmlFormButton(ButtonForm{
+			ObjectName: c.Form.ObjectName,
+			ButtonName: "btn_printer",
+			Title:      "Imprimir",
+			IconID:     "icon-printer",
+			OnclickFun: "printForm(this)",
+		})
+
+	}
 
 	// 	out += `<button type="button" name="btn_save" title="Tomar Fotografía" disabled>
 	// 	<svg aria-hidden="true" focusable="false" class="form-btn">
@@ -23,8 +32,26 @@ func buttons(module_name, object_name string) string {
 	// 	</svg>
 	// </button>`
 
-	out += `</div>
-</div>`
+	out += `</div></div>`
 
 	return out
+}
+
+func BuildHtmlFormButton(b ButtonForm) string {
+
+	var module string
+	if b.ModuleName != "" {
+		module = ` data-module="` + b.ModuleName + `"`
+	}
+
+	var object string
+	if b.ObjectName != "" {
+		object = ` data-object_name="` + b.ObjectName + `"`
+	}
+
+	return `<button type="button"` + module + object + ` name="` + b.ButtonName + `" title="` + b.Title + `" onclick="` + b.OnclickFun + `">
+		<svg aria-hidden="true" focusable="false" class="form-btn">
+		<use xlink:href="#` + b.IconID + `" />
+		</svg>
+	</button>`
 }

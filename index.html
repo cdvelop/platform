@@ -12,7 +12,6 @@
 	<link rel="icon" type="image/png" href="static/favicon.png">
 	<link rel="stylesheet" href="{{.StyleSheet}}">
 	<meta name="JsonBootActions" content="{{.JsonBootActions}}">
-	<meta name="JsonBootTests" content="{{.JsonBootTests}}">
 	<title>{{.AppName}}-ver.{{.AppVersion}}</title>
 </head>
 
@@ -53,21 +52,23 @@
 				<path fill="currentColor"
 					d="M 6.4980471,-6.4999999e-8 5.4375001,0.86699507 4.3750001,1.7361795 V 2.8002196 3.6694034 H 1.0000005 C 0.45000043,3.6694034 4.35e-7,4.1738369 4.35e-7,4.7903667 v 5.6048163 c 0,0.61653 0.449999995,1.120963 1.000000065,1.120963 H 4.0000001 V 16 H 12 v -4.483854 h 3 c 0.55,0 1,-0.504433 1,-1.120963 V 4.7903667 C 16,4.1738369 15.55,3.6694034 15,3.6694034 H 11.75 V 1.9310345 -6.4999999e-8 H 9.1250001 Z M 2.0000005,4.7903667 c 0.552,0 1,0.5021916 1,1.1209634 0,0.6187718 -0.448,1.1209634 -1,1.1209634 -0.552,0 -1,-0.5021916 -1,-1.1209634 0,-0.6187718 0.448,-1.1209634 1,-1.1209634 z M 5.0000001,9.2742202 H 11 V 14.879037 H 5.0000001 Z" />
 			</symbol>
+
+			<symbol id="icon-key" viewBox="0 0 16 16">
+				<path fill="currentColor" d="m1.1 5.2c1.6-1.6 4.1-1.6 5.6 0 0.18 0.18 0.33 0.36 0.47 0.56h6.8l1.7 1.7c0.31 0.31 0.31 0.81 0 1.1l-0.56 0.56-0.56-0.56-1.1 1.1-1.1-1.1-1.1 1.1-1.1-1.1-1.1 1.1h-1.5c-0.19 0.41-0.45 0.79-0.79 1.1-1.6 1.6-4.1 1.6-5.6 0-1.6-1.6-1.6-4.1 0-5.6zm2 3.6c0.47-0.46 0.47-1.2 0-1.7-0.47-0.46-1.2-0.46-1.7 0-0.47 0.46-0.47 1.2 0 1.7 0.47 0.46 1.2 0.46 1.7 0z" />
+			</symbol>
 			{{.SpriteIcons}}
 		</defs>
 	</svg>
 	<nav class="menu-container">
 		<ul class="navbar-container">
-
-			<li class="navbar-item">
+			<!-- <li class="navbar-item">
 				<a href="#" class="navbar-link" name="home">
 					<svg aria-hidden="true" focusable="false" class="fa-primary">
 						<use xlink:href="#icon-home" />
 					</svg>
 					<span class="link-text">Home</span>
 				</a>
-			</li>
-
+			</li> -->
 			{{.Menu}}
 		</ul>
 	</nav>

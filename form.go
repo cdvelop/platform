@@ -41,15 +41,10 @@ func inputIdTemplate(object_name, field_name, index string) string {
 func cssClass(html_name string) string {
 	var class = `normal border`
 
-	// fmt.Println("HTML NAME:", html_name)
-
 	switch html_name {
 
 	case "checkbox", "textarea":
 		class += ` all-width`
-
-	// case "file":
-	// 	class = `file`
 
 	default:
 		class += ` width-auto`
@@ -58,54 +53,23 @@ func cssClass(html_name string) string {
 	return ` class="` + class + `"`
 }
 
-// func (t Theme) JsFormVariablesTemplate(object_name string) string {
-// 	return `const form = module.querySelector('#` + object_name + `-form');
-// 	const fieldset = module.querySelectorAll("#` + object_name + `-form fieldset");`
-// }
+func (t Theme) renderFields(o *model.Object) (input_tags string) {
 
-// func (Theme) JsInputVariableTemplate(field_name, html_name string) string {
+	for index, f := range o.RenderFields() {
 
-// 	query_type := `querySelector`
+		id := inputIdTemplate(o.ObjectName, f.Name, strconv.Itoa(index))
 
-// 	switch html_name {
-// 	case "radio":
-// 		query_type = `querySelectorAll`
-// 	case "checkbox":
-// 		query_type = `querySelectorAll`
-// 	}
+		tag := f.Input.BuildContainerView(id, f.Name, f.SkipCompletionAllowed)
 
-// 	return `let input_` + field_name + ` = form.` + query_type + `("[name='` + field_name + `']");\n`
+		if f.Input.HtmlName() != "hidden" {
 
-// }
+			input_tags += t.inputTemplate(o.ObjectName, f.Name, f.Legend, f.Input.HtmlName(), tag, index) + "\n"
 
-func (t Theme) buildHtmlForm(o *model.Object) string {
+		} else {
 
-	if o != nil {
-
-		if o.Module != nil && len(o.Fields) != 0 {
-			var input_tags string
-
-			for index, f := range o.RenderFields() {
-
-				id := inputIdTemplate(o.ObjectName, f.Name, strconv.Itoa(index))
-
-				tag := f.Input.BuildContainerView(id, f.Name, f.SkipCompletionAllowed)
-
-				if f.Input.HtmlName() != "hidden" {
-
-					input_tags += t.inputTemplate(o.ObjectName, f.Name, f.Legend, f.Input.HtmlName(), tag, index) + "\n"
-
-				} else {
-
-					input_tags += tag
-				}
-
-			}
-
-			return formTemplate(o.ObjectName, o.PrimaryKeyName(), input_tags)
+			input_tags += tag
 		}
-
 	}
 
-	return ""
+	return
 }

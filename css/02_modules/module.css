@@ -52,31 +52,48 @@ h1 {
 	/* min-height: 6vh; */
 	height: var(--crud-buttons-container-height);
 }
+
 .form-inputs-container {
-  /* overflow: hidden; */
+	/* overflow: hidden; */
 	/* height: 30vh; */
 }
 
+.all-space-centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* flex-direction: column; */
+	/* grid-column: 1 / -1; */
+	/* grid-row: 1 / -1; */
+	background: transparent;
+	width: 100%;
+}
 
+.cont-centered-btn {
+	width: 100%;
+}
 
 
 /************ DESKTOP ************/
 @media only screen and (orientation: landscape) and (hover: hover) {
 
+	.cont-centered-btn {
+		width: 30%;
+	}
 
 	.form-inputs-container {
 		border-radius: .4em .4em 0em 0em;
 		background: var(--col-pri);
 		margin-left: var(--mag-cua);
 		/* margin-left: 0; */
-	
+
 		/* padding-top: .1vh; */
 		padding: var(--mag-sec) var(--mag-sec) 0 var(--mag-sec);
 		/* width: calc(var(--module-contend-with) - var(--mag-pri)); */
-		
+
 		/* width: calc(var(--module-contend-with) - var(--mag-pri)); */
 		width: calc(var(--module-contend-with) - var(--mag-pri));
-		
+
 		/* display: flex; */
 		/* flex-direction: column; */
 		/* height: calc(var(--module-contend-height) - var(--title-height)  - var(--mag-sec-vh)); */
@@ -107,21 +124,8 @@ h1 {
 	}
 
 
-	.cont-centered-btn {
-		margin-top: 0.5em;
-		display: flex;
-		height: 3em;
-		width: 100%;
-	}
 
-	.all-space-centered {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		grid-column: 1 / -1;
-		grid-row: 1 / -1;
-		background: transparent;
-	}
+
+
 
 }

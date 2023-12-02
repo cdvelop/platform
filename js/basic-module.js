@@ -10,7 +10,7 @@ function clickButtonMenuByModuleName(module_name) {
 	if (menuButton != undefined) {
 		setTimeout(function () {
 			menuButton.click();
-		}, 1000);
+		}, 500);
 	};
 };
 

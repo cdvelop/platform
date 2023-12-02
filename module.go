@@ -6,46 +6,56 @@ func (Theme) ModuleClassName() string {
 	return "slider_panel"
 }
 
-func (t Theme) ModuleTemplate(m *model.Module, form_object *model.Object, list model.ContainerViewAdapter) string {
+func (t Theme) ModuleTemplate(c *model.TemplateModuleConfig) string {
 
-	if m == nil {
+	if c.Module == nil {
 		return "error al generar template modulo no ingresado"
 	}
 
+	// HEADER -->
 	out := `<div class="header-module">
 	<div class="module-title">
-		<h1>` + m.Title + `:</h1>
+		<h1>` + c.Module.Title + `:</h1>
 	</div>`
-
-	out += m.HeaderInputTarget
-
+	out += c.HeaderInputTarget
 	out += `</div>`
+	// <-- HEADER
 
-	out += `<div class="scroll-container">
+	// CONTAINER -->
+	out += `<div class="scroll-container">`
 
-	<div class="box-snap search-list-container">`
+	if c.ButtonLogin {
 
-	if list != nil {
-		out += list.BuildContainerView("", "", true)
+		out += t.loginTemplate(c.Form)
+
 	} else {
-		out += `<div class="container-list-only"></div>`
-	}
 
-	out += `</div>
+		out += `<div class="box-snap search-list-container">`
+
+		if c.AsideList != nil {
+			out += c.AsideList.BuildContainerView("", "", true)
+		} else {
+			out += `<div class="container-list-only"></div>`
+		}
+
+		out += `</div>
 
 	<div class="box-snap edition-container">
 
 		<div class="form-inputs-container">
 			<div class="form-distributed-fields">`
 
-	out += t.buildHtmlForm(form_object)
+		out += formTemplate(c.Form.ObjectName, c.Form.PrimaryKeyName(), t.renderFields(c.Form))
 
-	out += `</div></div>`
+		out += `</div></div>`
 
-	out += buttons(m.ModuleName, form_object.ObjectName)
+		out += buttons(c)
 
-	out += `</div>
-</div>`
+		out += `</div>`
+	}
+
+	out += `</div>`
+	// <-- CONTAINER
 
 	return out
 }

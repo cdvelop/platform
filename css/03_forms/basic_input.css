@@ -11,6 +11,7 @@ input[type=text],
 input[type=time],
 input[type=password],
 input[type=search],
+input[type=mail],
 textarea {
     font-weight: bold;
     font-size: var(--font-size-normal);
