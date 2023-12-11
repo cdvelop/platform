@@ -11,3 +11,10 @@ func (Theme) QuerySelectorModule(module_name string) string {
 func (Theme) QuerySelectorObject(module_name, object_name string) string {
 	return "div#" + module_name + " [data-id='" + object_name + "']"
 }
+
+func (Theme) QuerySelectorUserName() string {
+	return "div#USER_NAME a"
+}
+func (Theme) QuerySelectorUserArea() string {
+	return "h2#USER_AREA"
+}
