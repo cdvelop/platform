@@ -7,7 +7,7 @@ func (t Theme) loginTemplate(o *model.Object) (out string) {
 	out += `<div class="all-space-centered">
 <div class="cont-centered-btn">`
 	// <div class="cont-centered-btn">`
-	out += `<form name="` + o.ObjectName + `" autocomplete="off" novalidate>`
+	out += `<form name="` + o.ObjectName + `" autocomplete="off" spellcheck="false">`
 	out += t.renderFields(o)
 	out += `</form>`
 	out += `<div class="login-button">`
