@@ -1,9 +1,4 @@
 
-function getObjectIdFromForm(form) {
-    const id_object = form.querySelector(`[name="` + form.dataset.field_id + `"]`)
-    return id_object.value
-}
-
 function updateInputClass(input, classesToAdd, classesToRemove, message) {
 
     let fd = input.closest('fieldset');
