@@ -7,7 +7,7 @@ import (
 )
 
 func formTemplate(object_name, field_with_id, input_tags string) string {
-	return `<form class="form-distributed-fields" name="` + object_name + `" data-field_id="` + field_with_id + `" autocomplete="off">
+	return `<form class="form-distributed-fields" name="` + object_name + `" data-field_id="` + field_with_id + `" autocomplete="off" novalidate>
 	` + input_tags + `
 	</form>`
 }
