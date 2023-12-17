@@ -9,17 +9,29 @@ function ShowMessageToUser(message, ...options) {
 		let seconds = "" + HowManyWords(message);
 		let tipo = "ok"; // Valor predeterminado
 
+
+		if (message.includes("err")) {
+			// console.log("MENSAJE CONTIENE ERROR:", message)
+			tipo = "err";
+		}
+
 		for (let i = 0; i < options.length; i++) {
 
 			if (options[i].includes("err")) {
 				tipo = "err";
-				seconds = "240";
-				break; 
-			} else if (keywords.some(keyword => options[i].includes(keyword)))  {
+				break;
+			} else if (keywords.some(keyword => options[i].includes(keyword))) {
 				tipo = "permanent";
 				break;
 			}
 		}
+
+		// Resto del código...
+		if (tipo == "err") {
+			seconds = "240"
+			logError(message);
+		}
+
 
 		document.documentElement.style.setProperty('--time-read-waiting', seconds + 's');
 
@@ -27,10 +39,6 @@ function ShowMessageToUser(message, ...options) {
 
 		user_message_update.innerHTML = message_out;
 
-		// Resto del código...
-		if (tipo == "err") {
-			console.log(message);
-		}
 	}
 };
 
