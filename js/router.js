@@ -33,6 +33,8 @@ document.querySelector(".menu-container").addEventListener("click", function (e)
 
 	// console.log("TARGET FINAL: ",hash_target);
 
+	moduleClickedUI(hash_target.name);
+
 	OnOffHash(hash_target);
 });
 
