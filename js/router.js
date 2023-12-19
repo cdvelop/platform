@@ -3,7 +3,11 @@ let HASH_NOW;
 
 // console.log("ROUTER")
 
-document.querySelector(".menu-container").addEventListener("click", function (e) {
+// document.querySelector(".menu-container").addEventListener("click", function (e) {
+// });
+
+
+function menuRouter(e) {
 	let hash_target;
 	// console.log("REQUEST_ROUTER: ", e.target, " TAG: ", e.target.tagName);
 
@@ -36,7 +40,8 @@ document.querySelector(".menu-container").addEventListener("click", function (e)
 	// moduleClickedUI(hash_target.name);
 
 	OnOffHash(hash_target);
-});
+
+}
 
 // prendo apago link botones rutas
 function OnOffHash(hash_now) {

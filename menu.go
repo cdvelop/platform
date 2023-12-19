@@ -13,3 +13,7 @@ func (t Theme) MenuButtonTemplate(module_name, index, icon_id, title string) str
 	<svg aria-hidden="true" focusable="false" class="fa-primary"><use xlink:href="#` + icon_id + `" /></svg>
 	<span class="link-text">` + title + `</span></a></li>`
 }
+
+func (Theme) RouterJSFuncName() string {
+	return "menuRouter"
+}
