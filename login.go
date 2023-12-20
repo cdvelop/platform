@@ -18,6 +18,7 @@ func (t Theme) loginTemplate(o *model.Object) (out string) {
 		Title:      o.Title,
 		IconID:     "icon-key",
 		OnclickFun: "submitLoginForm(this)",
+		Disabled:   true,
 	})
 	out += `</div>`
 

@@ -7,4 +7,5 @@ type ButtonForm struct {
 	Title      string // ej: Imprimir
 	IconID     string // ej: icon-printer
 	OnclickFun string // ej: printForm(this)
+	Disabled   bool   // activado por defecto
 }

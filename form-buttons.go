@@ -39,6 +39,11 @@ func buttons(c *model.TemplateModuleConfig) string {
 
 func BuildHtmlFormButton(b ButtonForm) string {
 
+	var disabled string
+	if b.Disabled {
+		disabled = ` disabled`
+	}
+
 	var module string
 	if b.ModuleName != "" {
 		module = ` data-module="` + b.ModuleName + `"`
@@ -49,7 +54,7 @@ func BuildHtmlFormButton(b ButtonForm) string {
 		object = ` data-object_name="` + b.ObjectName + `"`
 	}
 
-	return `<button type="button"` + module + object + ` name="` + b.ButtonName + `" title="` + b.Title + `" onclick="` + b.OnclickFun + `">
+	return `<button type="button"` + module + object + ` name="` + b.ButtonName + `" title="` + b.Title + `" onclick="` + b.OnclickFun + `"` + disabled + `>
 		<svg aria-hidden="true" focusable="false" class="form-btn">
 		<use xlink:href="#` + b.IconID + `" />
 		</svg>
