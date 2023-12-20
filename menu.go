@@ -17,3 +17,7 @@ func (t Theme) MenuButtonTemplate(module_name, index, icon_id, title string) str
 func (Theme) RouterJSFuncName() string {
 	return "menuRouter"
 }
+
+func (Theme) MenuClassSelected() string {
+	return "hash-selected"
+}
