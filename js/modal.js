@@ -1,34 +1,43 @@
 // Obtener la ventana del mensaje de modo incompatible
 let modal_windows = document.getElementById('modal-window');
 
-
-
 function modalHandler(e) {
-
+  // console.log("modalHandler:", e.target)
   switch (e.pointerType) {
     case "touch":
-      ShowModal(false, "")
       break;
     case "mouse":
-      ShowModal(false, "")
       break;
-
   }
 
-  // console.log(e.pointerType)
-
+  ShowModal(false, e.target, closeCallbackFun)
 }
 
-function ShowModal(opt, data) {
+let closeCallbackFun;
+// close_callback_fun
+function ShowModal(opt, content, close_callback_fun) {
 
-  modal_windows.innerHTML = ''; // Limpia el contenido actual
+  closeCallbackFun = close_callback_fun
 
   if (opt == true) {
-    modal_windows.appendChild(data); // Agrega la imagen seleccionada al modal
+
+    if (modal_windows.firstChild) {
+      // Si hay un hijo, reemplázalo con el nuevo contenido
+      modal_windows.replaceChild(content, modal_windows.firstChild);
+    } else {
+      // Si no hay hijos, simplemente agrega el nuevo contenido al contenedor de medios
+      modal_windows.appendChild(content); // Agrega la imagen seleccionada al modal
+    }
+
     modal_windows.style.display = 'flex'; // Mostrar en dispositivos móviles en modo horizontal
     // modal_windows.style.opacity = 1;
   } else {
     modal_windows.style.display = 'none'; // Ocultar en dispositivos móviles en modo vertical y en dispositivos de escritorio
+
+    // console.log("closeCallbackFun", closeCallbackFun)
+    if (closeCallbackFun != undefined) {
+      closeCallbackFun(content)
+    }
   }
 }
 
