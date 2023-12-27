@@ -6,13 +6,13 @@ func buttons(c *model.TemplateModuleConfig) string {
 
 	out := `<div class="crud-buttons-container"><div class="contebuton">`
 
-	out += BuildHtmlFormButton(ButtonForm{
-		ModuleName: c.Module.ModuleName,
-		ButtonName: "btn_cancel",
-		Title:      "Comenzar Nuevamente",
-		IconID:     "icon-btn-cancel",
-		OnclickFun: "resetModule(this)",
-	})
+	// out += BuildHtmlFormButton(ButtonForm{
+	// 	ModuleName: c.Module.ModuleName,
+	// 	ButtonName: "btn_cancel",
+	// 	Title:      "Comenzar Nuevamente",
+	// 	IconID:     "icon-btn-cancel",
+	// 	OnclickFun: "resetModule(this)",
+	// })
 
 	if c.ButtonPrint {
 
