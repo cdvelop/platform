@@ -2,42 +2,39 @@ package platform
 
 import "github.com/cdvelop/model"
 
-func buttons(c *model.TemplateModuleConfig) string {
+func buttons(c *model.TemplateModuleConfig) (out string) {
 
-	out := `<div class="crud-buttons-container"><div class="contebuton">`
+	if c != nil && len(c.FormButtons) != 0 {
+		out = `<div class="crud-buttons-container"><div class="contebuton">`
 
-	// out += BuildHtmlFormButton(ButtonForm{
-	// 	ModuleName: c.Module.ModuleName,
-	// 	ButtonName: "btn_cancel",
-	// 	Title:      "Comenzar Nuevamente",
-	// 	IconID:     "icon-btn-cancel",
-	// 	OnclickFun: "resetModule(this)",
-	// })
+		// out += BuildHtmlFormButton(ButtonForm{
+		// 	ModuleName: c.Module.ModuleName,
+		// 	ButtonName: "btn_cancel",
+		// 	Title:      "Comenzar Nuevamente",
+		// 	IconID:     "icon-btn-cancel",
+		// 	OnclickFun: "resetModule(this)",
+		// })
 
-	if c.ButtonPrint {
+		for _, btn := range c.FormButtons {
 
-		out += BuildHtmlFormButton(ButtonForm{
-			ObjectName: c.Form.ObjectName,
-			ButtonName: "btn_printer",
-			Title:      "Imprimir",
-			IconID:     "icon-printer",
-			OnclickFun: "printForm(this)",
-		})
+			out += BuildHtmlFormButton(btn)
+
+		}
+
+		// 	out += `<button type="button" name="btn_save" title="Tomar Fotografía" disabled>
+		// 	<svg aria-hidden="true" focusable="false" class="form-btn">
+		// 		<use xlink:href="#icon-camera" />
+		// 	</svg>
+		// </button>`
+
+		out += `</div></div>`
 
 	}
-
-	// 	out += `<button type="button" name="btn_save" title="Tomar Fotografía" disabled>
-	// 	<svg aria-hidden="true" focusable="false" class="form-btn">
-	// 		<use xlink:href="#icon-camera" />
-	// 	</svg>
-	// </button>`
-
-	out += `</div></div>`
 
 	return out
 }
 
-func BuildHtmlFormButton(b ButtonForm) string {
+func BuildHtmlFormButton(b *model.ButtonForm) string {
 
 	var disabled string
 	if b.Disabled {

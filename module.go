@@ -24,9 +24,9 @@ func (t Theme) ModuleTemplate(c *model.TemplateModuleConfig) string {
 	// CONTAINER -->
 	out += `<div class="scroll-container">`
 
-	if c.ButtonLogin {
+	if c.RenderAllSpaceCentered {
 
-		out += t.loginTemplate(c.Form)
+		out += t.loginTemplate(c)
 
 	} else {
 
