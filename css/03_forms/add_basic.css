@@ -19,7 +19,13 @@
 	height: calc(var(--module-contend-height) - var(--title-height) - var(--crud-buttons-container-height));
 
    /* height: 50vh; */
+   padding: 1.5px;
 }
+/* Añadir margen a los elementos dentro del contenedor */
+/* .form-distributed-fields > * {
+    margin: 3px;
+} */
+
 
 .form-distributed-fields::-webkit-scrollbar {
 	width: .2em;

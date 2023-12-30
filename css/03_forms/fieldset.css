@@ -4,24 +4,21 @@
     /* --field-height:7.5em; */
 }
 
-fieldset.normal {
+fieldset.normal, fieldset.file {
     background: var(--col-pri);
-    /* border-color: var(--col-gra); */
     border-radius: .4em;
-    /* width: auto; */
-    min-width: 49%;
-    
     min-height: var(--field-height);
-    /* height: var(--field-height); */
-    flex: auto;
-    /* max-width: 100px; */
-    /* margin: .2em; */
-    /* margin: 2vw; */
-    margin: .5vh .5vw .5vh .5vw;
-    /* margin-bottom: .5em; */
+    
+}
 
-    /* display: flex; */
-    /* align-items: center; */
+fieldset.normal {
+    margin-top: 5px;
+
+    min-width: 49%;
+   
+    flex: auto;
+    /* margin: .5vh; */
+
     padding: 1em 1em .5em 1em;
 }
 

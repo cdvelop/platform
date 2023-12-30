@@ -8,10 +8,12 @@
 
 .container-list-search {
 	flex-direction: column;
-	height: 90%;
+	/* height: 90%; */
+	height: calc(var(--module-contend-height) - var(--crud-buttons-container-height) - var(--mag-sec-vh) - var(--mag-sec-vh) - var(--mag-sec-vh));
 }
 
 .container-list-only {
+	height: 100%;
 	align-content: flex-start;
 	overflow: auto;
 	height: calc(var(--module-contend-height) - var(--mag-sec-vh) - var(--mag-sec-vh) - var(--mag-sec)*2);

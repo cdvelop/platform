@@ -79,6 +79,7 @@
         flex-direction: row-reverse;
         overflow: hidden;
         margin-top: 0;
+        margin-bottom: 0;
         height: var(--module-contend-height);
     }
 
@@ -93,13 +94,14 @@
 
 
         width: calc(var(--search-list-container-width) - var(--mag-sec-vw));
-        height: calc(var(--module-contend-height) - var(--mag-sec-vh) - var(--mag-sec-vh));
+       
+        /* height: calc(var(--module-contend-height) - var(--mag-sec-vh) - var(--mag-sec-vh)); */
+       
         border-radius: .4em;
 
         margin-top: var(--mag-sec-vh);
         margin-right: var(--mag-sec-vw);
-        margin-bottom: var(--mag-sec-vh);
-
+        /* margin-bottom: var(--mag-sec-vh); */
     }
 
     .edition-container {
