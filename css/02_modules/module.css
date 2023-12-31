@@ -13,7 +13,6 @@ h1 {
 }
 
 .module-title h1 {
-	/* margin-left: 5px; */
 	text-align: left;
 	color: var(--col-pri);
 	text-shadow: 1px 1px var(--col-cua);
@@ -44,27 +43,16 @@ h1 {
 }
 
 
-
 .crud-buttons-container {
-	/* grid-area: crud-buttons-container; */
-	/* margin-bottom: var(--mag-pri); */
 	padding-bottom: var(--mag-pri);
-	/* min-height: 6vh; */
 	height: var(--crud-buttons-container-height);
 }
 
-.form-inputs-container {
-	/* overflow: hidden; */
-	/* height: 30vh; */
-}
 
 .all-space-centered {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* flex-direction: column; */
-	/* grid-column: 1 / -1; */
-	/* grid-row: 1 / -1; */
 	background: transparent;
 	width: 100%;
 }
@@ -81,26 +69,23 @@ h1 {
 		width: 30%;
 	}
 
-	.form-inputs-container {
-		border-radius: .4em .4em 0em 0em;
+	.form-container {
 		background: var(--col-pri);
-		margin-left: var(--mag-cua);
-		/* margin-left: 0; */
-
-		/* padding-top: .1vh; */
 		padding: var(--mag-sec) var(--mag-sec) 0 var(--mag-sec);
-		/* width: calc(var(--module-contend-with) - var(--mag-pri)); */
-
-		/* width: calc(var(--module-contend-with) - var(--mag-pri)); */
+		margin-left: var(--mag-cua);
 		width: calc(var(--module-contend-with) - var(--mag-pri));
-
-		/* display: flex; */
-		/* flex-direction: column; */
-		/* height: calc(var(--module-contend-height) - var(--title-height)  - var(--mag-sec-vh)); */
-		/* height: calc(var(--module-contend-height) - var(--title-height) - var(--crud-buttons-container-height) - .5vh); */
 	}
 
 
+	.foot-buttons-border {
+		border-radius: .4em .4em 0em 0em;
+	}
+
+	.full-form-border {
+		border-radius: .4em;
+		height: calc(var(--module-contend-height) - var(--title-height) - var(--mag-sec-vh));
+		padding-bottom: var(--mag-sec-vh);
+	}
 
 
 	h1 {
@@ -111,9 +96,6 @@ h1 {
 		margin-left: calc(.7em);
 	}
 
-	/* margen primario */
-
-
 	.header-module {
 		width: calc(var(--module-contend-with) - var(--search-list-container-width));
 	}
@@ -122,10 +104,5 @@ h1 {
 		margin-bottom: var(--mag-sec);
 		padding-right: var(--mag-pri);
 	}
-
-
-
-
-
 
 }

@@ -38,12 +38,17 @@ func (t Theme) ModuleTemplate(c *model.TemplateModuleConfig) string {
 			out += `<div class="container-list-only"></div>`
 		}
 
-		out += `</div>
+		out += `</div>`
 
-	<div class="box-snap edition-container">
+		out += `<div class="box-snap edition-container">`
 
-		<div class="form-inputs-container">
-			<div class="form-distributed-fields">`
+		if len(c.FormButtons) != 0 {
+			out += `<div class="form-container foot-buttons-border">`
+		} else {
+			out += `<div class="form-container full-form-border">`
+		}
+
+		out += `<div class="form-distributed-fields">`
 
 		out += formTemplate(c.Form.ObjectName, c.Form.PrimaryKeyName(), t.renderFields(c.Form))
 

@@ -26,29 +26,11 @@ input[type=text]:focus,input[type=number]:focus,input[type=password]:focus {
 }
 
 
-/* textarea::-webkit-scrollbar { */
-    /* width: .2em; */
-    /* background: none; */
-    /* border-radius: .1em; */
-/* } */
-
-/* textarea::-webkit-scrollbar-track { */
-    /* margin-top: 50px; */
-    /* margin-bottom: 50px; */
-/* } */
-
-/* textarea::-webkit-scrollbar-thumb { */
-    /* background: var(--col-sec); */
-    /* border-radius: .1em; */
-/* } */
-
 .disable,
 input:disabled,
 input[type=text]:disabled {
     background-color: var(--col-gra);
-    /* background-color: var(--col-ter); */
     pointer-events: none;
-    /*  border-color: var(--col-gra); */
 }
 
 input {
@@ -78,20 +60,16 @@ input[type=date]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
-/*  ::-webkit-file-upload-button, */
-
 
 select {
     cursor: pointer;
     font-weight: bold;
-    /* font-size: 101%; */
     font-size: var(--font-size-normal);
     border: 0;
     outline: 0;
     background: none;
     border-radius: 0em .4em .4em 0em;
     width: 100%;
-    /* flex: auto; */
     margin-top: .25em;
     margin-bottom: .25em;
 }
@@ -105,23 +83,10 @@ select::-webkit-scrollbar {
     display: none;
 }
 
-/* select::-moz-scrollbar {display: none;} */
-/* select::-o-scrollbar {	display: none;	} */
-/* select::-google-ms-scrollbar {display: none;} */
-/* select::-khtml-scrollbar {display: none;} */
-
-/* remover text decoracion */
-input[type=text] {
-    /* width: auto; */
-    /* display: none; */
-    /* position: absolute; */
-}
-
 
 input[type=date] {
     font-weight: bold;
     width: 100%;
-    /* font-size: 101%; */
     font-size: var(--font-size-normal);
 
     border: none;
@@ -129,7 +94,6 @@ input[type=date] {
 
 input[type=time]::after {
     content: ' Horas';
-    /* font-size: 80%; */
     font-size: 1rem;
 }
 
