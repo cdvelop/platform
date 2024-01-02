@@ -1,5 +1,5 @@
 let press_item_timer;
-let threshold = 3000; //  (3 segundos)
+let threshold = 2000; //  (2 segundos)
 let elapsed_time;
 let finished_time = false;
 let current_element = Object();
