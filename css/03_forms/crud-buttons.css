@@ -14,6 +14,7 @@ button[name*="btn"] {
 }
 
 button[name="capture"]:disabled,
+button[name="joystick"]:disabled,
 button[name*="btn"]:disabled {
     background-color: var(--col-ter);
     pointer-events: none;
