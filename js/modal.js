@@ -70,3 +70,18 @@ function isMobileDevice() {
   const isNarrow = (window.innerWidth / window.innerHeight) < 1.5; // ajusta el valor a lo que consideres una pantalla de proporción alargada
   return isMobile && isSafari && !isNarrow;
 }
+
+// X no hagas esto, es muy costoso
+// window.addEventListener('resize', () => {
+// if (window.innerWidth > 720) i
+//  mostrarElementoEnDesktop()
+//}
+//})
+
+// usa la API de media queries
+const desktopMediaQuery = window.matchMedia('(min-width: 720px)')
+desktopMediaQuery.addEventlistener('change',(event) => {
+if (event.matches) {
+  mostrarELementoEnDesktop()
+ }
+})
