@@ -10,7 +10,7 @@
 .search-container label {
 	display: flex;
 	border-radius: .4em 0em 0em .4em;
-	background-color: var(--col-sec);
+	background-color: var(--color-secondary);
 	width: 4em;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -27,7 +27,7 @@ input[type=search],
 }
 
 .search-container label:hover {
-	background-color: var(--col-select);
+	background-color: var(--color-selection);
 }
 
 .disable-search {
@@ -35,7 +35,7 @@ input[type=search],
 }
 
 .disable-search label {
-	background-color: var(--col-ter);
+	background-color: var(--color-tertiary);
 }
 
 .search-container input[type=search],
@@ -53,19 +53,19 @@ input[type=search],
 }
 
 .search-container input[type=search] {
-	background: var(--col-pri);
+	background: var(--color-primary);
 }
 
 .footer-search-error {
 	border-width: 3px;
 	border-style: solid;
-	border-color: var(--col-err);
+	border-color: var(--color-error);
 }
 
 
 .footer-search:focus,
 .footer-search-error:focus {
-	box-shadow: 0px 0px 3px 1px var(--col-select) inset;
+	box-shadow: 0px 0px 3px 1px var(--color-selection) inset;
 }
 
 
@@ -82,7 +82,7 @@ input[type=search],
 	}
 
 	.search-container input[type=search] {
-		background: var(--col-gra);
+		background: var(--color-gray);
 	}
 
 	.search-container input[type=search],

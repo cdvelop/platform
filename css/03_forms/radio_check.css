@@ -9,20 +9,20 @@
     /* font-size: 101%; */
     font-size: var(--font-size-normal);
     
-    color: var(--col-cua);
+    color: var(--color-quaternary);
     transition: 0.3s all ease;
 }
 
 label span {
     /* font-size: 90%; */
     font-size: 1rem;
-    color: var(--col-ter);
+    color: var(--color-tertiary);
 }
 
 label span:hover {
     font-weight: bold;
     transition: 0.3s all ease;
-    color: var(--col-cua);
+    color: var(--color-quaternary);
 }
 
 input[type=checkbox]:focus {
@@ -31,7 +31,7 @@ input[type=checkbox]:focus {
 
 input[type=checkbox],input[type=radio] {
     margin: .3em;
-    background-color: var(--col-gra);
+    background-color: var(--color-gray);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -50,6 +50,6 @@ input[type=radio]{
 }
 
 input[type=checkbox]:checked,input[type=radio]:checked {
-    background-color: var(--col-sec);
-    background: var(--col-sec) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
+    background-color: var(--color-secondary);
+    background: var(--color-secondary) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
 }

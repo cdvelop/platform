@@ -1,8 +1,8 @@
 .scroll-container {
     margin-top: var(--title-height);
 
-    width: var(--module-contend-with);
-    height: calc(var(--module-contend-height) - var(--title-height));
+    width: var(--content-width);
+    height: calc(var(--content-height) - var(--title-height));
     overflow-y: hidden;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -15,8 +15,8 @@
 .box-snap {
     flex: none;
 
-    width: calc(var(--module-contend-with) - var(--mag-pri-vw));
-    height: calc(var(--module-contend-height) - var(--title-height));
+    width: calc(var(--content-width) - var(--mag-pri-vw));
+    height: calc(var(--content-height) - var(--title-height));
 
     margin: 0 var(--mag-sec);
 }
@@ -35,7 +35,7 @@
         overflow: hidden;
         margin-top: 0;
         margin-bottom: 0;
-        height: var(--module-contend-height);
+        height: var(--content-height);
     }
 
     .box-snap {
@@ -45,7 +45,7 @@
 
     .search-list-container {
 
-        background: var(--col-pri);
+        background: var(--color-primary);
 
         width: calc(var(--search-list-container-width) - var(--mag-sec-vw));
        
@@ -57,7 +57,7 @@
 
     .edition-container {
         margin-top: var(--title-height);
-        width: calc(var(--module-contend-with) - var(--search-list-container-width) - var(--mag-sec-vw));
+        width: calc(var(--content-width) - var(--search-list-container-width) - var(--mag-sec-vw));
 
         margin-right: var(--mag-sec-vw);
         padding-left: var(--mag-sec-vw);

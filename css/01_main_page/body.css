@@ -3,7 +3,7 @@
 		body {
 			font-size: .8rem;
 			/* background-color: rgb(255, 17, 0); */
-			background-color: var(--col-ter);
+			background-color: var(--color-tertiary);
 			/* ESTO HACE QUE SE OCULTE LA BARRA DE DIRECCIONES */
 			min-height: 100vh;
 			
@@ -46,7 +46,7 @@
 		a:link,
 		a:visited {
 			text-decoration: none;
-			color: var(--col-cua);
+			color: var(--color-quaternary);
 		}
 		
 		
@@ -55,31 +55,31 @@
 @media only screen 	and (orientation: landscape) and (hover: hover) {
 			:root {
 				--header-height: 5vh;
-				--module-contend-height: 95vh;
+				--content-height: 95vh;
 				--menu-size: 5vw;
-				--module-contend-with: 95vw;
+				--content-width: 95vw;
 			}
 			
 			
 			body {
 				overflow: hidden;
-				background-color: var(--col-gra);
+				background-color: var(--color-gray);
 				font-size: 16px;
 			
-				height: var(--module-contend-height);
+				height: var(--content-height);
 				
 				/* padding: 0; */
-				/* background-color: var(--col-gra); */
+				/* background-color: var(--color-gray); */
 				display: grid;
 				grid-template:
 					"header         header" var(--header-height) 
-					"module-content menu-container" var(--module-contend-height) / 
-					var(--module-contend-with)var(--menu-size);
+					"module-content menu-container" var(--content-height) / 
+					var(--content-width)var(--menu-size);
 			}
 
 			header,
 			.menu-container {
-				background-color: var(--col-gra);
+				background-color: var(--color-gray);
 			}
 
 			header {

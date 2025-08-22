@@ -14,12 +14,12 @@ h1 {
 
 .module-title h1 {
 	text-align: left;
-	color: var(--col-pri);
-	text-shadow: 1px 1px var(--col-cua);
+	color: var(--color-primary);
+	text-shadow: 1px 1px var(--color-quaternary);
 }
 
 .header-module {
-	width: var(--module-contend-with);
+	width: var(--content-width);
 	height: var(--title-height);
 	padding: 1vh 1vw 1vh 1.2vw;
 	display: flex;
@@ -71,10 +71,10 @@ h1 {
 	}
 
 	.form-container {
-		background: var(--col-pri);
+		background: var(--color-primary);
 		padding: var(--mag-sec) var(--mag-sec) 0 var(--mag-sec);
 		margin-left: var(--mag-cua);
-		width: calc(var(--module-contend-with) - var(--mag-pri));
+		width: calc(var(--content-width) - var(--mag-pri));
 	}
 
 
@@ -84,7 +84,7 @@ h1 {
 
 	.full-form-border {
 		border-radius: .4em;
-		height: calc(var(--module-contend-height) - var(--title-height) - var(--mag-sec-vh));
+		height: calc(var(--content-height) - var(--title-height) - var(--mag-sec-vh));
 		padding-bottom: var(--mag-sec-vh);
 	}
 
@@ -98,7 +98,7 @@ h1 {
 	}
 
 	.header-module {
-		width: calc(var(--module-contend-with) - var(--search-list-container-width));
+		width: calc(var(--content-width) - var(--search-list-container-width));
 	}
 
 	.box-edit-content-all-space {

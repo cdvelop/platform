@@ -1,8 +1,6 @@
 package platform
 
-import "github.com/cdvelop/model"
-
-func buttons(c *model.TemplateModuleConfig) (out string) {
+func buttons(c *TemplateModuleConfig) (out string) {
 
 	if c != nil && len(c.FormButtons) != 0 {
 		out = `<div class="crud-buttons-container"><div class="contebuton">`
@@ -34,7 +32,7 @@ func buttons(c *model.TemplateModuleConfig) (out string) {
 	return out
 }
 
-func BuildHtmlFormButton(b *model.ButtonForm) string {
+func BuildHtmlFormButton(b *ButtonForm) string {
 
 	var disabled string
 	if b.Disabled {

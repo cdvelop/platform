@@ -9,14 +9,14 @@
 .container-list-search {
 	flex-direction: column;
 	/* height: 90%; */
-	height: calc(var(--module-contend-height) - var(--crud-buttons-container-height) - var(--mag-sec-vh) - var(--mag-sec-vh) - var(--mag-sec-vh));
+	height: calc(var(--content-height) - var(--crud-buttons-container-height) - var(--mag-sec-vh) - var(--mag-sec-vh) - var(--mag-sec-vh));
 }
 
 .container-list-only {
 	height: 100%;
 	align-content: flex-start;
 	overflow: auto;
-	height: calc(var(--module-contend-height) - var(--mag-sec-vh) - var(--mag-sec-vh) - var(--mag-sec)*2);
+	height: calc(var(--content-height) - var(--mag-sec-vh) - var(--mag-sec-vh) - var(--mag-sec)*2);
 	flex-wrap: wrap;
 	justify-content: space-between;
 	flex-direction: row;
@@ -57,7 +57,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--col-gra);
+	background: var(--color-gray);
 	border-radius: .1em;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .target-list-container .target-li {
-	/* color: var(--col-pri); */
+	/* color: var(--color-primary); */
 	position: relative;
 	display: inline-flex;
 	/* min-height: 300px; */
@@ -91,7 +91,7 @@
 	/* margin: 0em 0em 1.2em 0em; */
 	margin: 0em 0em 1.2em 0em;
 	border-radius: .3em .3em .3em .3em;
-	border: 2px solid var(--col-gra);
+	border: 2px solid var(--color-gray);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -99,9 +99,9 @@
 }
 
 .target-list-container .target-li:hover {
-	border: 2px solid var(--col-pri);
-	background-color: var(--col-select);
-	color: var(--col-pri);
+	border: 2px solid var(--color-primary);
+	background-color: var(--color-selection);
+	color: var(--color-primary);
 	margin-left: 5px;
 	font-weight: bold;
 }
@@ -118,11 +118,11 @@
 }
 
 .target-li-on {
-	background: var(--col-select);
+	background: var(--color-selection);
 }
 
 .target-li-off {
-	background: var(--col-pri);
+	background: var(--color-primary);
 }
 
 .target-list-see {
@@ -134,12 +134,12 @@
 
 	.container-list-search {
 		margin: var(--mag-sec) var(--mag-sec) 0 var(--mag-sec);
-		background: var(--col-ter);
+		background: var(--color-tertiary);
 
 	}
 
 	.container-list-only {
-		background: var(--col-ter);
+		background: var(--color-tertiary);
 		margin: var(--mag-sec);
 		/* padding-bottom: 10px; */
 	}
@@ -149,8 +149,8 @@
 	}
 
 	.target-list-container .target-li:hover {
-		border: 2px solid var(--col-sec);
-		background-color: var(--col-hover);
+		border: 2px solid var(--color-secondary);
+		background-color: var(--color-hover);
 	}
 
 

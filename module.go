@@ -1,12 +1,10 @@
 package platform
 
-import "github.com/cdvelop/model"
-
 func (Theme) ModuleClassName() string {
 	return "slider_panel"
 }
 
-func (t Theme) ModuleTemplate(c *model.TemplateModuleConfig) string {
+func (t Theme) ModuleTemplate(c *TemplateModuleConfig) string {
 
 	if c.Module == nil {
 		return "error al generar template modulo no ingresado"
@@ -15,7 +13,7 @@ func (t Theme) ModuleTemplate(c *model.TemplateModuleConfig) string {
 	// HEADER -->
 	out := `<div class="header-module">
 	<div class="module-title">
-		<h1>` + c.Module.Title + `:</h1>
+		<h1>` + c.Module.Title() + `:</h1>
 	</div>`
 	out += c.HeaderInputTarget
 	out += `</div>`
@@ -50,7 +48,7 @@ func (t Theme) ModuleTemplate(c *model.TemplateModuleConfig) string {
 
 		out += `<div class="form-distributed-fields">`
 
-		out += formTemplate(c.Form.ObjectName, c.Form.PrimaryKeyName(), t.renderFields(c.Form))
+		out += formTemplate(c.Form.ObjectName(), c.Form.PrimaryKeyName(), t.renderFields(c.Form))
 
 		out += `</div></div>`
 

@@ -5,8 +5,6 @@ import (
 	"runtime"
 )
 
-type Theme struct{}
-
 func (Theme) FolderPath() string {
 	_, filename, _, _ := runtime.Caller(0)
 	dir := filepath.Dir(filename)

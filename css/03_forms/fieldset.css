@@ -5,7 +5,7 @@
 }
 
 fieldset.normal, fieldset.file {
-    background: var(--col-pri);
+    background: var(--color-primary);
     border-radius: .4em;
     min-height: var(--field-height);
     
@@ -31,7 +31,7 @@ fieldset.normal[data-err]::before {
     position: absolute;
     top: 0;
     right: 0;
-    color: var(--col-err);
+    color: var(--color-error);
     font-size: var(--font-size-small);
     padding-right: 5px;
 }
@@ -47,7 +47,7 @@ fieldset.normal[data-err]::before {
 }
 
 .border {
-    border-color: var(--col-gra);
+    border-color: var(--color-gray);
 }
 
 
@@ -59,32 +59,32 @@ fieldset.normal input {
 
 fieldset.normal:focus-within,
 fieldset.normal:focus-visible {
-    box-shadow: 0px 0px 3px 1px var(--col-select) inset;
+    box-shadow: 0px 0px 3px 1px var(--color-selection) inset;
 }
 
 
 fieldset.file:disabled,
 fieldset.normal:disabled {
-    background-color: var(--col-gra);
+    background-color: var(--color-gray);
     pointer-events: none;
 }
 fieldset.file:disabled legend,
 fieldset.normal:disabled legend {
-    background-color: var(--col-ter);
+    background-color: var(--color-tertiary);
     pointer-events: none;
 }
 
 fieldset.file:hover,
 fieldset.normal:hover {
-    /* border: 2px solid var(--col-sec); */
-    /* box-shadow:0px 0px 3px 1px var(--col-sec) inset; */
-    box-shadow: 0px 0px 3px 1px var(--col-select) inset;
+    /* border: 2px solid var(--color-secondary); */
+    /* box-shadow:0px 0px 3px 1px var(--color-secondary) inset; */
+    box-shadow: 0px 0px 3px 1px var(--color-selection) inset;
 }
 
 legend.basic-legend {
     font-size: .8rem;
-    background: var(--col-sec);
-    border-color: var(--col-pri);
+    background: var(--color-secondary);
+    border-color: var(--color-primary);
     border-radius: .4em;
     padding: 0em .5em .3em .5em;
     /* margin-bottom: .3em; */
@@ -92,13 +92,13 @@ legend.basic-legend {
 }
 
 legend.basic-legend label {
-    color: var(--col-pri);
-    text-shadow: 1px 1px var(--col-cua);
+    color: var(--color-primary);
+    text-shadow: 1px 1px var(--color-quaternary);
 }
 
 
 legend.basic-legend:hover {
-    background-color: var(--col-select);
+    background-color: var(--color-selection);
 }
 
 

@@ -33,7 +33,7 @@ function ShowMessageToUser(message, ...options) {
 		}
 
 
-		document.documentElement.style.setProperty('--time-read-waiting', seconds + 's');
+		document.documentElement.style.setProperty('--transition-wait', seconds + 's');
 
 		const message_out = '<H4 class="' + tipo + '">' + message + '</H4>';
 
@@ -56,6 +56,6 @@ if (screen.width <= 600) {
 
 function closeMobileMessage() {
 	// console.log("CLICK EN MENSAJE",e.target);
-	document.documentElement.style.setProperty('--time-read-waiting', '0s');
+	document.documentElement.style.setProperty('--transition-wait', '0s');
 }
 

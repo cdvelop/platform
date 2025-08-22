@@ -8,7 +8,7 @@
 	justify-content: center;
 	align-items: center;
 	display: none;/* Ocultar el mensaje por defecto */
-	background: var(--col-sec);
+	background: var(--color-secondary);
 
     animation: fadeIn 1s;
 }
@@ -16,14 +16,14 @@
 
 
 #modal-window h4 {
-	color: var(--col-pri);
+	color: var(--color-primary);
 	/* color: var(--col-hov); */
 }
 
 /* @media only screen and (max-width: 1024px) and (orientation: landscape) { */
 	/* #modal-window { */
 		/* display: flex; Mostrar el mensaje solo en dispositivos móviles en modo horizontal */
-        /* background: var(--col-sec); */
+        /* background: var(--color-secondary); */
     /* } */
 /* }  */
 

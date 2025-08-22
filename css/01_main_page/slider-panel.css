@@ -7,8 +7,8 @@
 	margin-left: 0;
 	z-index: 1;
 
-	width: var(--module-contend-with);
-	height: var(--module-contend-height);
+	width: var(--content-width);
+	height: var(--content-height);
 
 	/* overflow: hidden; */
 
@@ -25,7 +25,7 @@
 /*  color slider_panel */
 .slider_panel:target {
 	top:var(--menu-size);
-	background-color: var(--col-sec);
+	background-color: var(--color-secondary);
 	/* background-color: blueviolet; */
 }
 
@@ -35,7 +35,7 @@
 	@media only screen 	and (orientation: landscape) and (hover: hover) {
 
 	.slider_panel {
-		/* border: .1vw solid var(--col-gra); */
+		/* border: .1vw solid var(--color-gray); */
 		grid-area: module-content;
 		/* margin: 0; */
 		position:unset;
@@ -47,10 +47,10 @@
 
 		border-radius: 0;
 		/* margin-top: 0; */
-		/* height: var(--module-contend-height); */
+		/* height: var(--content-height); */
 		/* height: 80vh; */
 		/* width: 80vw; */
-		/* width: var(--module-contend-with); */
+		/* width: var(--content-width); */
 		/* height: initial; */
 	}
 	

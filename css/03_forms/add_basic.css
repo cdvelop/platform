@@ -28,7 +28,7 @@
 }
 
 .form-distributed-fields::-webkit-scrollbar-thumb {
-	background: var(--col-gra);
+	background: var(--color-gray);
 	border-radius: .1em;
 }
 
@@ -37,11 +37,11 @@
 @media only screen and (orientation: landscape) and (hover: hover) {
 
 	.form-distributed-fields {
-		height: calc(var(--module-contend-height) - var(--title-height) - var(--crud-buttons-container-height) - 1.1vh);
+		height: calc(var(--content-height) - var(--title-height) - var(--crud-buttons-container-height) - 1.1vh);
 
 		width: 100%;
 		overflow-x: hidden;
 
-		background: var(--col-ter);
+		background: var(--color-tertiary);
 	}
 }

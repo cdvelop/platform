@@ -1,7 +1,7 @@
 /* mensajes usuario */
 
 .permanent {
-    color: var(--col-cua);
+    color: var(--color-quaternary);
     font-size: 1.3em;
     text-shadow: 0.1em 0.1em 0.1em #ffffff;
 }
@@ -14,11 +14,11 @@
 }
 
 .foka {
-    border-color: var(--col-sec);
+    border-color: var(--color-secondary);
 }
 
 .ferr {
-    border-color: var(--col-err);
+    border-color: var(--color-error);
 }
 
 #USER_NAME {
@@ -41,7 +41,7 @@ header #USER_NAME a {
 
 #USER_AREA {
 	text-transform: uppercase;
-	color: var(--col-pri);
+	color: var(--color-primary);
 	text-align: right;
 }
 
@@ -53,15 +53,15 @@ header #USER_NAME a {
 }
 
 .err {
-	color: var(--col-err);
+	color: var(--color-error);
 }
 
 .ok {
-	color: var(--col-sec);
+	color: var(--color-secondary);
 }
 
 .off {
-	color: var(--col-ter);
+	color: var(--color-tertiary);
 }
 
 
@@ -107,15 +107,15 @@ header #USER_NAME a {
 #user-mobile-messages {
 	background: rgba(255, 255, 255, 0.8);
 	visibility: hidden;
-	animation: fadeOut var(--time-read-waiting);
+	animation: fadeOut var(--transition-wait);
 }
 
 
 #horizontal-mobile-message {
-	color: var(--col-pri);
+	color: var(--color-primary);
 	touch-action: none;
 	display: none;
-	background: var(--col-sec);
+	background: var(--color-secondary);
 }
 
 @media only screen and (orientation:portrait) {
@@ -150,7 +150,7 @@ header #USER_NAME a {
 	.err,
 	.ok {
 		padding: 0;
-		animation: fadeOut var(--time-read-waiting);
+		animation: fadeOut var(--transition-wait);
 		visibility: hidden;
 		width: 100%;
 	}

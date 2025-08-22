@@ -2,8 +2,6 @@ package platform
 
 import (
 	"strconv"
-
-	"github.com/cdvelop/model"
 )
 
 func formTemplate(object_name, field_with_id, input_tags string) string {
@@ -53,17 +51,17 @@ func cssClass(html_name string) string {
 	return ` class="` + class + `"`
 }
 
-func (t Theme) renderFields(o *model.Object) (input_tags string) {
+func (t Theme) renderFields(o object) (input_tags string) {
 
 	for index, f := range o.RenderFields() {
 
-		id := inputIdTemplate(o.ObjectName, f.Name, strconv.Itoa(index))
+		id := inputIdTemplate(o.ObjectName(), f.Name(), strconv.Itoa(index))
 
-		tag := f.Input.BuildContainerView(id, f.Name, f.SkipCompletionAllowed)
+		tag := f.Input().BuildContainerView(id, f.Name(), f.SkipCompletionAllowed())
 
-		if f.Input.HtmlName() != "hidden" {
+		if f.Input().HtmlName() != "hidden" {
 
-			input_tags += t.inputTemplate(o.ObjectName, f.Name, f.Legend, f.Input.HtmlName(), tag, index) + "\n"
+			input_tags += t.inputTemplate(o.ObjectName(), f.Name(), f.Legend(), f.Input().HtmlName(), tag, index) + "\n"
 
 		} else {
 

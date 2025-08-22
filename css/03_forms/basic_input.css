@@ -22,14 +22,14 @@ textarea {
 }
 
 input[type=text]:focus,input[type=number]:focus,input[type=password]:focus {
-    border-bottom: 1px solid var(--col-select);
+    border-bottom: 1px solid var(--color-selection);
 }
 
 
 .disable,
 input:disabled,
 input[type=text]:disabled {
-    background-color: var(--col-gra);
+    background-color: var(--color-gray);
     pointer-events: none;
 }
 
@@ -47,7 +47,7 @@ input:active {
 }
 
 input::placeholder, textarea::placeholder {
-    color: var(--col-ter);
+    color: var(--color-tertiary);
     font-size: var(--font-size-small);
     font-weight: normal;
 }
@@ -75,8 +75,8 @@ select {
 }
 
 select:focus>option:checked {
-    color: var(--col-pri) !important;
-    background: var(--col-sec) !important;
+    color: var(--color-primary) !important;
+    background: var(--color-secondary) !important;
 }
 
 select::-webkit-scrollbar {

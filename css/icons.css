@@ -12,7 +12,7 @@ svg.sprite-icons{
 }
 
 .icon-selected{
-    background-color: var(--col-select);
+    background-color: var(--color-selection);
 }
 
 .arrow {

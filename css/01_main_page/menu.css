@@ -1,6 +1,6 @@
 	/************ MOBILE *********** */
 	.menu-container {
-		background-color: var(--col-gra);
+		background-color: var(--color-gray);
 		position: fixed;
 		top: 0;
 		width: 100vw;
@@ -25,13 +25,13 @@
 	}
 
 	.hash-selected {
-		background: var(--col-select);
+		background: var(--color-selection);
 	}
 
 	.hash-selected,
 	.hash-selected>svg {
-		/* background:var(--col-select); */
-		color: var(--col-pri);
+		/* background:var(--color-selection); */
+		color: var(--color-primary);
 		transition: 0.3s all ease;
 	}
 
@@ -50,7 +50,7 @@
 
 
 	.fa-primary {
-		color: var(--col-sec);
+		color: var(--color-secondary);
 		height: 8em;
 		width: 8em;
 		transition: 0.6 all ease;
@@ -70,7 +70,7 @@
 
 			top: var(--header-height);
 			width: var(--menu-size);
-			height: var(--module-contend-height);
+			height: var(--content-height);
 			/* transition: all .6s ease-in-out; */
 			margin-left: auto;
 			right: 0;
@@ -110,18 +110,18 @@
 		}
 
 		.navbar-link:hover {
-			background-color: var(--col-hover);
-			/* background-color:var(--col-pri); */
+			background-color: var(--color-hover);
+			/* background-color:var(--color-primary); */
 		}
 
 		.hash-selected,
 		.hash-selected>.link-text {
-			color: var(--col-pri);
+			color: var(--color-primary);
 		}
 
 
 		.link-text {
-			color: var(--col-sec);
+			color: var(--color-secondary);
 		}
 
 		.fa-primary {
@@ -132,12 +132,12 @@
 
 		.btn-url-disable {
 			pointer-events: none;
-			background: var(--col-ter);
+			background: var(--color-tertiary);
 		}
 
 
 		.btn-selected {
-			background: var(--col-select);
+			background: var(--color-selection);
 		}
 
 
