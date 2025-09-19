@@ -1,3 +1,49 @@
+/* Menú hamburguesa (+) oculto por defecto */
+/* Botón menú hamburguesa mejorado */
+.menu-toggle {
+	position: fixed;
+	top: 18px;
+	left: 18px;
+	z-index: 200;
+	font-size: 2.2em;
+	background: #fff;
+	color: #2196f3;
+	border: none;
+	border-radius: 50%;
+	width: 54px;
+	height: 54px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: box-shadow 0.2s, background 0.2s, color 0.2s, transform 0.2s;
+	outline: none;
+}
+.menu-toggle:active {
+	background: #2196f3;
+	color: #fff;
+	transform: scale(1.08);
+	box-shadow: 0 4px 16px rgba(33,150,243,0.18);
+}
+
+@media (max-width: 900px) {
+	.menu-toggle {
+		display: flex;
+	}
+	.menu-container {
+		display: none;
+	}
+	.menu-container.active {
+		display: block;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100vw;
+		background: var(--color-gray);
+		z-index: 99;
+	}
+}
 	/************ MOBILE *********** */
 	.menu-container {
 		background-color: var(--color-gray);
@@ -90,9 +136,6 @@
 		}
 
 
-		.navbar-item:last-child {
-			/* margin-top: auto; */
-		}
 
 		.navbar-item {
 			height: 100%;
