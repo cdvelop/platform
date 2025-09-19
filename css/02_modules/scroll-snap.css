@@ -1,24 +1,73 @@
+
 .scroll-container {
     margin-top: var(--title-height);
-
     width: var(--content-width);
     height: calc(var(--content-height) - var(--title-height));
     overflow-y: hidden;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 900px) {
+    .scroll-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .box-snap {
+        width: calc(var(--content-width) - var(--mag-pri-vw));
+        height: calc(var(--content-height) - var(--title-height));
+        margin: 0 var(--mag-sec);
+    }
+    .edition-container {
+        width: calc(var(--content-width) - var(--search-list-container-width) - var(--mag-sec-vw));
+        margin-right: var(--mag-sec-vw);
+        padding-left: var(--mag-sec-vw);
+    }
+    .search-list-container {
+        width: calc(var(--search-list-container-width) - var(--mag-sec-vw));
+        margin-top: var(--mag-sec-vh);
+        margin-right: var(--mag-sec-vw);
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .scroll-container {
+        flex-direction: row;
+    }
 }
 
 
 .box-snap {
     flex: none;
+    width: 100%;
+    height: auto;
+    margin: 0 0 1em 0;
+}
 
-    width: calc(var(--content-width) - var(--mag-pri-vw));
-    height: calc(var(--content-height) - var(--title-height));
+.edition-container,
+.search-list-container {
+    width: 100%;
+    margin: 0 0 1em 0;
+}
 
-    margin: 0 var(--mag-sec);
+@media only screen and (min-width: 900px) {
+    .box-snap {
+        width: calc(var(--content-width) - var(--mag-pri-vw));
+        height: calc(var(--content-height) - var(--title-height));
+        margin: 0 var(--mag-sec);
+    }
+    .edition-container {
+        width: calc(var(--content-width) - var(--search-list-container-width) - var(--mag-sec-vw));
+        margin-right: var(--mag-sec-vw);
+        padding-left: var(--mag-sec-vw);
+    }
+    .search-list-container {
+        width: calc(var(--search-list-container-width) - var(--mag-sec-vw));
+        margin-top: var(--mag-sec-vh);
+        margin-right: var(--mag-sec-vw);
+    }
 }
 
 .scroll-container .box-snap {

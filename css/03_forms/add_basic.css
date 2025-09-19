@@ -1,18 +1,23 @@
+
 .form-distributed-fields {
 	flex-grow: 1;
 	overflow: auto;
-	/* for Firefox */
-	display: inline-flex;
-	flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
 	align-content: flex-start;
-	flex-direction: row;
-
+	width: 100%;
 	scrollbar-width: thin;
-
 	border-radius: .4em;
-
 	min-height: 100%;
 	padding: 1.5px;
+}
+
+@media only screen and (min-width: 900px) {
+	.form-distributed-fields {
+		display: inline-flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
 }
 
 

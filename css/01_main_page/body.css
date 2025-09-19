@@ -2,18 +2,28 @@
 	
 		body {
 			font-size: .8rem;
-			/* background-color: rgb(255, 17, 0); */
 			background-color: var(--color-tertiary);
-			/* ESTO HACE QUE SE OCULTE LA BARRA DE DIRECCIONES */
 			min-height: 100vh;
-			
-
-			/* overflow: scroll; */
-			/* scroll-behavior: smooth; */
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			width: 100vw;
 			height: 100vh;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			display: block;
+		}
+
+		.main-content {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		@media only screen and (min-width: 900px) {
+			.main-content {
+				max-width: 1100px;
+				margin: 0 auto;
+				box-shadow: 0 0 10px rgba(0,0,0,0.05);
+				background: var(--color-primary);
+			}
 		}
 		
 		body::before {
