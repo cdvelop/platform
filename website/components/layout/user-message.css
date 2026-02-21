@@ -1,0 +1,180 @@
+/* mensajes usuario */
+
+.permanent {
+    color: var(--color-quaternary);
+    font-size: 1.3em;
+    text-shadow: 0.1em 0.1em 0.1em #ffffff;
+}
+
+
+.foka,
+.ferr {
+    border-width: 3px;
+    border-style: solid;
+}
+
+.foka {
+    border-color: var(--color-secondary);
+}
+
+.ferr {
+    border-color: var(--color-error);
+}
+
+#USER_NAME {
+	text-decoration: none;
+}
+
+header #USER_NAME a {
+	text-transform: capitalize;
+}
+
+#user-desktop-messages {
+	width: 100%;
+	justify-content: center;
+
+}
+
+/* #user-desktop-messages {
+	text-transform: capitalize;
+} */
+
+#USER_AREA {
+	text-transform: uppercase;
+	color: var(--color-primary);
+	text-align: right;
+}
+
+#USER_NAME,
+#user-desktop-messages,
+#USER_AREA {
+	display: flex;
+	align-items: center;
+}
+
+.err {
+	color: var(--color-error);
+}
+
+.ok {
+	color: var(--color-secondary);
+}
+
+.off {
+	color: var(--color-tertiary);
+}
+
+
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	to {
+		opacity: .7;
+		visibility: hidden;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+#horizontal-mobile-message,
+#user-mobile-messages {
+	z-index: 4;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#user-mobile-messages {
+	background: rgba(255, 255, 255, 0.8);
+	visibility: hidden;
+	animation: fadeOut var(--transition-wait);
+}
+
+
+#horizontal-mobile-message {
+	color: var(--color-primary);
+	touch-action: none;
+	display: none;
+	background: var(--color-secondary);
+}
+
+@media only screen and (orientation:portrait) {
+	#horizontal-mobile-message {
+		display: none;
+	}
+}
+
+
+@media only screen and (orientation:landscape) and (min-width:600px) and (max-width:1024px)   {
+	#horizontal-mobile-message {
+		display:flex;
+	}
+}
+
+
+.off,
+.err,
+.ok {
+	text-align: center;
+	padding: 20px;
+	width: 80%;
+	font-size: 1.3em;
+	text-shadow: 0.1em 0.1em 0.1em #ffffff;
+}
+
+/************ DESKTOP ************/
+@media only screen 	and (orientation: landscape) and (hover: hover) {
+
+
+	.off,
+	.err,
+	.ok {
+		padding: 0;
+		animation: fadeOut var(--transition-wait);
+		visibility: hidden;
+		width: 100%;
+	}
+
+	#USER_NAME {
+		font-size: calc(.5em + .5vh);
+		margin-left: .4rem;
+	}
+
+
+	#USER_AREA {
+		font-size: calc(.5em + .5vh);
+		margin-left: auto;
+		margin-right: .4rem;
+	}
+
+	#user-desktop-messages {
+		font-size: calc(.4em + .4vh);
+	}
+
+	#user-mobile-messages {
+		all: initial;
+		/* or unset */
+	}
+
+
+}

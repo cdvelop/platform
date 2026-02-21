@@ -1,0 +1,144 @@
+	/************ MOBILE *********** */
+	.menu-container {
+		background-color: var(--color-gray);
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		height: var(--menu-size);
+		text-decoration: none;
+		transition: 0.6s all ease;
+		z-index: 3;
+	}
+
+	.navbar-container {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		height: 100%;
+	}
+
+	/* ITEM */
+	.navbar-item {
+		width: 100%;
+	}
+
+	.hash-selected {
+		background: var(--color-selection);
+	}
+
+	.hash-selected,
+	.hash-selected>svg {
+		/* background:var(--color-selection); */
+		color: var(--color-primary);
+		transition: 0.3s all ease;
+	}
+
+
+	.navbar-link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: var(--menu-size);
+		text-decoration: none;
+		transition: 0.6s all ease;
+
+	}
+
+
+
+	.fa-primary {
+		color: var(--color-secondary);
+		height: 8em;
+		width: 8em;
+		transition: 0.6 all ease;
+	}
+
+	.link-text {
+		display: none;
+	}
+
+
+	/************ DESKTOP ************/
+	@media only screen and (orientation: landscape) and (hover: hover) {
+
+		/* menu pricipal de navegacion */
+		.menu-container {
+			/* grid-area: menu-container; */
+
+			top: var(--header-height);
+			width: var(--menu-size);
+			height: var(--content-height);
+			/* transition: all .6s ease-in-out; */
+			margin-left: auto;
+			right: 0;
+		}
+
+		.menu-container:hover {
+			width: 10em;
+		}
+
+		.menu-container:hover .link-text {
+			display: block;
+		}
+
+		.navbar-container {
+			flex-direction: column;
+			/* justify-content: initial; */
+		}
+
+
+		.navbar-item:last-child {
+			/* margin-top: auto; */
+		}
+
+		.navbar-item {
+			height: 100%;
+		}
+
+		.navbar-link {
+			flex-direction: row;
+			height: 100%;
+			/* justify-content: initial; */
+			/* height: 6em; */
+		}
+
+		.navbar-link svg {
+			margin: 0 .5em;
+		}
+
+		.navbar-link:hover {
+			background-color: var(--color-hover);
+			/* background-color:var(--color-primary); */
+		}
+
+		.hash-selected,
+		.hash-selected>.link-text {
+			color: var(--color-primary);
+		}
+
+
+		.link-text {
+			color: var(--color-secondary);
+		}
+
+		.fa-primary {
+			max-width: 2.5em;
+			min-width: 2.5em;
+		}
+
+
+		.btn-url-disable {
+			pointer-events: none;
+			background: var(--color-tertiary);
+		}
+
+
+		.btn-selected {
+			background: var(--color-selection);
+		}
+
+
+	}

@@ -1,0 +1,98 @@
+@keyframes autofill {
+    to {
+        background: transparent;
+    }
+}
+
+span.right-age,
+select[name*="id"],
+input[type=number],
+input[type=text],
+input[type=time],
+input[type=password],
+input[type=search],
+input[type=mail],
+textarea {
+    font-weight: bold;
+    font-size: var(--font-size-normal);
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 100%;
+}
+
+input[type=text]:focus,input[type=number]:focus,input[type=password]:focus {
+    border-bottom: 1px solid var(--color-selection);
+}
+
+
+.disable,
+input:disabled,
+input[type=text]:disabled {
+    background-color: var(--color-gray);
+    pointer-events: none;
+}
+
+input {
+    background: transparent;
+}
+
+input:-webkit-autofill {
+    animation-name: autofill;
+    animation-fill-mode: both;
+}
+
+input:active {
+    background: none;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--color-tertiary);
+    font-size: var(--font-size-small);
+    font-weight: normal;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+select {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: var(--font-size-normal);
+    border: 0;
+    outline: 0;
+    background: none;
+    border-radius: 0em .4em .4em 0em;
+    width: 100%;
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+select:focus>option:checked {
+    color: var(--color-primary) !important;
+    background: var(--color-secondary) !important;
+}
+
+select::-webkit-scrollbar {
+    display: none;
+}
+
+
+input[type=date] {
+    font-weight: bold;
+    width: 100%;
+    font-size: var(--font-size-normal);
+
+    border: none;
+}
+
+input[type=time]::after {
+    content: ' Horas';
+    font-size: 1rem;
+}

@@ -1,0 +1,42 @@
+:root {
+    --arrow-size: 12px;
+    --arrow-border: solid 4px;
+}
+
+svg.sprite-icons{
+    /* display: none; */
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.icon-selected{
+    background-color: var(--color-selection);
+}
+
+.arrow {
+    display: inline-block;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    margin: var(--arrow-size);
+    border-top: var(--arrow-border);
+    border-right: var(--arrow-border);
+}
+
+.arrow.right {
+    transform: rotate(45deg);
+}
+
+.arrow.down {
+    transform: rotate(135deg);
+}
+
+.arrow.left,
+.arrow-circle.left {
+    transform: rotate(225deg);
+}
+
+.arrow.up {
+    transform: rotate(315deg);
+}

@@ -1,0 +1,47 @@
+.form-distributed-fields {
+	flex-grow: 1;
+	overflow: auto;
+	/* for Firefox */
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	flex-direction: row;
+
+	scrollbar-width: thin;
+
+	border-radius: .4em;
+
+	min-height: 100%;
+	padding: 1.5px;
+}
+
+
+.form-distributed-fields::-webkit-scrollbar {
+	width: .2em;
+	background: none;
+	border-radius: .1em;
+}
+
+.form-distributed-fields::-webkit-scrollbar-track {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.form-distributed-fields::-webkit-scrollbar-thumb {
+	background: var(--color-gray);
+	border-radius: .1em;
+}
+
+
+/************ DESKTOP ************/
+@media only screen and (orientation: landscape) and (hover: hover) {
+
+	.form-distributed-fields {
+		height: calc(var(--content-height) - var(--title-height) - var(--crud-buttons-container-height) - 1.1vh);
+
+		width: 100%;
+		overflow-x: hidden;
+
+		background: var(--color-tertiary);
+	}
+}
