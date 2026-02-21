@@ -1,0 +1,88 @@
+button[name*="btn"] {
+    /* background-position: center; */
+    /* background-size: 30px; */
+
+    /* background-repeat: no-repeat; */
+    background-color: var(--color-secondary);
+    /* color: var(--color-primary); */
+    /* padding: .4rem; */
+    /* background-size: 30%; */
+    flex: auto;
+    /* margin: .25em; */
+    /* border: 1px solid var(--color-gray); */
+    /* color:var(--color-primary) */
+}
+
+button[name="capture"]:disabled,
+button[name="joystick"]:disabled,
+button[name*="btn"]:disabled {
+    background-color: var(--color-tertiary);
+    pointer-events: none;
+    /*  border-color: var(--color-gray); */
+}
+
+button[name*="btn"]:hover {
+    background-color: var(--color-selection);
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+}
+
+.contebuton {
+    display: flex;
+    height: 100%;
+
+    justify-content: space-between;
+
+    /* padding: var(--mag-sec); */
+
+}
+
+/* svg {
+    fill: currentColor;
+} */
+
+/* .btn-crud-svg {
+    color: var(--color-primary);
+} */
+
+
+
+.form-btn {
+    color: var(--color-primary);
+    height: 2em;
+    width: 2em;
+}
+
+
+
+
+/************ DESKTOP ************/
+@media only screen and (orientation: landscape) and (hover: hover) {
+
+    input::placeholder {
+        font-size: .8rem;
+    }
+
+    button[name*="btn"] {
+
+        margin: var(--mag-sec);
+        /* margin: .25em; */
+        border-radius: .4em;
+        /* padding: .4rem; */
+        background-size: 15%;
+        /* border: none; */
+    }
+
+
+    .contebuton {
+        background: var(--color-primary);
+        /* margin-left: var(--mag-cua); */
+        margin-left: var(--mag-cua);
+        border-radius: 0em 0em .4em .4em;
+    }
+
+}

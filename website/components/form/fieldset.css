@@ -1,0 +1,116 @@
+:root {
+    --field-width: 100vw;
+    --field-height: 120px;
+    /* --field-height:7.5em; */
+}
+
+fieldset.normal, fieldset.file {
+    background: var(--color-primary);
+    border-radius: .4em;
+    min-height: var(--field-height);
+
+}
+
+fieldset.normal {
+    margin-top: 5px;
+
+    min-width: 49%;
+
+    flex: auto;
+    /* margin: .5vh; */
+
+    padding: 1em 1em .5em 1em;
+}
+
+fieldset.normal[data-err] {
+    position: relative;
+}
+
+fieldset.normal[data-err]::before {
+    content: attr(data-err);
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--color-error);
+    font-size: var(--font-size-small);
+    padding-right: 5px;
+}
+
+
+.all-width {
+    width: 100%;
+    min-width: 100%;
+}
+
+.width-auto {
+    max-height: 5em;
+}
+
+.border {
+    border-color: var(--color-gray);
+}
+
+
+
+fieldset.normal input {
+    margin-top: var(--mag-sec);
+}
+
+
+fieldset.normal:focus-within,
+fieldset.normal:focus-visible {
+    box-shadow: 0px 0px 3px 1px var(--color-selection) inset;
+}
+
+
+fieldset.file:disabled,
+fieldset.normal:disabled {
+    background-color: var(--color-gray);
+    pointer-events: none;
+}
+fieldset.file:disabled legend,
+fieldset.normal:disabled legend {
+    background-color: var(--color-tertiary);
+    pointer-events: none;
+}
+
+fieldset.file:hover,
+fieldset.normal:hover {
+    /* border: 2px solid var(--color-secondary); */
+    /* box-shadow:0px 0px 3px 1px var(--color-secondary) inset; */
+    box-shadow: 0px 0px 3px 1px var(--color-selection) inset;
+}
+
+legend.basic-legend {
+    font-size: .8rem;
+    background: var(--color-secondary);
+    border-color: var(--color-primary);
+    border-radius: .4em;
+    padding: 0em .5em .3em .5em;
+    /* margin-bottom: .3em; */
+    /* margin-left: 1.5em; */
+}
+
+legend.basic-legend label {
+    color: var(--color-primary);
+    text-shadow: 1px 1px var(--color-quaternary);
+}
+
+
+legend.basic-legend:hover {
+    background-color: var(--color-selection);
+}
+
+
+/************ DESKTOP ************/
+@media only screen and (orientation: landscape) and (hover: hover) {
+    :root {
+        --field-width: 63vw;
+    }
+
+    fieldset.normal {
+        min-height:auto;
+    }
+
+
+}
